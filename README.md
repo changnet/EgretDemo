@@ -2,11 +2,7 @@
 My game demo for learning egret. Base on egret demo(http://developer.egret.com/cn/article/index/id/1074).
 
 # Note
-* 版本升级4.0.1升4.1.0：egret upgrade
-* 升级后编译工程会提示4.0.1module找不到，这是因为新版本egret允许同一工程使用
-  不同版本模块，因为部分模块仍使用旧版本模块，并没有转换。在egretProperties.json找到对应的模块，把path去掉，这样就会使用当前版本的模块。
-* 提示canPick字段不存在，这是因为egret改版后去掉了这个字段，直接把这行代码去掉
-* 重新编译，即可运行
+
 * 函数主入口在Main.ts，通用事件ADDED_TO_STAGE调用onAddToStage
 * js的"原型链"（prototype chain）模式，来实现继承
 * js的装饰器 ???

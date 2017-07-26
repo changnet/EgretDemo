@@ -4,6 +4,7 @@ var game_file_list = [
     //----auto game_file_list start----
 	"libs/modules/egret/egret.js",
 	"libs/modules/egret/egret.native.js",
+	"libs/modules/res/res.js",
 	"polyfill/promise.js",
 	"bin-debug/Main.js",
 	//----auto game_file_list end----

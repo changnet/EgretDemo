@@ -11,6 +11,9 @@
   "modules": [
     {
       "name": "egret"
+    },
+    {
+      "name": "res"
     }
   ]
 }
