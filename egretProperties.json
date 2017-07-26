@@ -13,7 +13,8 @@
       "name": "egret"
     },
     {
-      "name": "resourcemanager"
+      "name": "resourcemanager",
+      "path": "3thlibs/resourcemanager"
     }
   ]
 }

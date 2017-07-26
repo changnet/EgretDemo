@@ -20,7 +20,11 @@
 
 # egret资源管理
 * 全部采用json格式来配置，工具采用Res Depot来管理(PS:这工具没什么用，手动编辑default.res.json或者用egret wing3内置的工具一样)
-* 程序中加载资源使用[RES模块](http://developer.egret.com/cn/doc/index/extension/RES/newres/index.html)
+* 所有资源(图片、音效、动画、配置文件...)都要放在resource目录下
+* 先安装node.js,然后安装resourcemanage并使用res build命令，将resource目录下的资源生成配置config.json(取决于mapConfig的参数)
+* 在代码中引入resourcemanager模块(见外部TypeScript模块)
+* 程序中加载资源使用[resourcemanager模块](http://developer.egret.com/cn/doc/index/extension/RES/newres/index.html)
+* 旧模块不要res使用
 
 # egret纹理
 * 采用texture merger来管理，把多个纹理合并后生成一个png文件，并且附带生成一个json文件
@@ -31,5 +35,8 @@
 ## 内部模块，如(egret,res、game、eui...)
 * 在egretProperties.json的modules中配置对应的模块名。
 * egret build -e命令(即重新构建工程)，引擎会自动把使用到的类库放到你的项目里的libs/modules文件夹.PS:egret wing3居然不会自动刷新工作目录
-## 外部模块
-* ...
+* resourcemanage不是内部模块，要按外部模块处理
+## 外部TypeScript模块
+* 下载第三方库,如[resourcemanager](https://github.com/egret-labs/resourcemanager)
+* 把下载的库文件(不需要ts文件，只需要.d.ts、js、js.map、min.js)到第三方目录，如3thlibs/resourcemanager
+* 在egretProperties.json中添加对应的模块名，指定path

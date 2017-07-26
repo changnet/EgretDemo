@@ -1,0 +1,13 @@
+{"file":"ui.png","frames":{
+"bk":{"x":528,"y":122,"w":244,"h":157,"offX":0,"offY":0,"sourceW":244,"sourceH":157},
+"logo":{"x":1,"y":1,"w":525,"h":206,"offX":5,"offY":0,"sourceW":531,"sourceH":206},
+"menu":{"x":667,"y":416,"w":288,"h":92,"offX":0,"offY":0,"sourceW":288,"sourceH":92},
+"pic1":{"x":774,"y":269,"w":220,"h":145,"offX":0,"offY":0,"sourceW":220,"sourceH":145},
+"pic2":{"x":223,"y":209,"w":220,"h":145,"offX":0,"offY":0,"sourceW":220,"sourceH":145},
+"pic3":{"x":1,"y":209,"w":220,"h":145,"offX":0,"offY":0,"sourceW":220,"sourceH":145},
+"pic4":{"x":774,"y":122,"w":220,"h":145,"offX":0,"offY":0,"sourceW":220,"sourceH":145},
+"pic5":{"x":1,"y":356,"w":220,"h":145,"offX":0,"offY":0,"sourceW":220,"sourceH":145},
+"pic6":{"x":445,"y":281,"w":220,"h":145,"offX":0,"offY":0,"sourceW":220,"sourceH":145},
+"star":{"x":878,"y":1,"w":43,"h":44,"offX":0,"offY":0,"sourceW":43,"sourceH":44},
+"suo":{"x":223,"y":428,"w":238,"h":77,"offX":0,"offY":0,"sourceW":238,"sourceH":77},
+"title":{"x":528,"y":1,"w":348,"h":119,"offX":1,"offY":0,"sourceW":350,"sourceH":119}}}

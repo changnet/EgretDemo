@@ -1,6 +1,13 @@
 {
-	"groups": [
-	],
-	"resources": [
-	]
+	"alias": {},
+	"groups": {},
+	"resources": {
+		"ui": {
+			"gameUI.json": "ui/gameUI.json",
+			"gameUI.png": "ui/gameUI.png",
+			"bg.jpg":"ui/bg.jpg",
+			"ui.json": "ui/ui.json",
+			"ui.png": "ui/ui.png"
+		}
+    }
 }
