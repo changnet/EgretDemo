@@ -46,6 +46,7 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     async preloadRes(){
+        // 进入协程
         try{
             await RES.loadConfig();  // 初始化res
             await RES.getResAsync("ui/gameUI.json");
@@ -55,6 +56,14 @@ class Main extends egret.DisplayObjectContainer {
         catch(e){
             console.error(e);
         }
+
+        // 退出协程
+
+        let resource = ["config.json"]
+        let foo = function(){}
+
+        let loadingPage = new LoadingPage(resource,foo,this);
+        uiManager.showPage(loadingPage);
     }
 
     public onAddToStage(){
@@ -65,6 +74,9 @@ class Main extends egret.DisplayObjectContainer {
             this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
         }
 
+        uiManager = new UIManager(this);
+
+        // 注意，这个函数会进入协程
         this.preloadRes();
     }
 }

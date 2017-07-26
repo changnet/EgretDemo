@@ -17,6 +17,10 @@
   件的，JS里的module是以文件为单位的，一个文件一个module
 * [aysnc await相当于Lua中的协程。](https://basarat.gitbooks.io/typescript/content/docs/async-await.html)
 * promise的写法思想，[参考js的promise](http://javascript.ruanyifeng.com/advanced/promise.html)
+* [函数返回类型](https://www.typescriptlang.org/docs/handbook/functions.html)function add(x: number, y: number): number {}
+* [默认参数](https://www.typescriptlang.org/docs/handbook/functions.html)function add(x: number, y?: number): number {}
+* [getter/setter](http://www.typescriptlang.org/docs/handbook/classes.html)，当只有getter没有setter时，变量是只读的
+* 单例模式：在类后面声明一个全局变量，如：let uiManager:UIManager;然后在程序初始化时初始化：uiManager = new UIManager(this);
 
 # egret资源管理
 * 全部采用json格式来配置，工具采用Res Depot来管理(PS:这工具没什么用，手动编辑default.res.json或者用egret wing3内置的工具一样)
