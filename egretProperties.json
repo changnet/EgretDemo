@@ -13,7 +13,7 @@
       "name": "egret"
     },
     {
-      "name": "res"
+      "name": "resourcemanager"
     }
   ]
 }

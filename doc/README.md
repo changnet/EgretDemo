@@ -19,8 +19,12 @@
 * promise的写法思想，[参考js的promise](http://javascript.ruanyifeng.com/advanced/promise.html)
 
 # egret资源管理
-* 全部采用json格式来配置，工具采用Res Depot来管理
+* 全部采用json格式来配置，工具采用Res Depot来管理(PS:这工具没什么用，手动编辑default.res.json或者用egret wing3内置的工具一样)
 * 程序中加载资源使用[RES模块](http://developer.egret.com/cn/doc/index/extension/RES/newres/index.html)
+
+# egret纹理
+* 采用texture merger来管理，把多个纹理合并后生成一个png文件，并且附带生成一个json文件
+* 使用RES模块来加载RES.getRes("ui2/gameUI.json#fh.png")，fh.png是合并到gameUI.png中的一个子纹理
 
 # egret引用库
 [参考](http://edn.egret.com/cn/article/index/id/172)
