@@ -21,7 +21,6 @@ class LoadingPage extends egret.DisplayObjectContainer{
         var hei = this.stage.stageHeight;
 
         if (bgImage){
-            console.info(bgImage);
             var bg = new egret.Bitmap();
             bg.texture = RES.getRes(bgImage);
             this.addChild(bg);

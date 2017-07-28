@@ -2,6 +2,7 @@
 	"alias": {},
 	"groups": {},
 	"resources": {
+		"ShadowPlane.png": "ShadowPlane.png",
 		"ui": {
 			"gameUI.json": "ui/gameUI.json",
 			"gameUI.png": "ui/gameUI.png",

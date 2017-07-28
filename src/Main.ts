@@ -59,10 +59,18 @@ class Main extends egret.DisplayObjectContainer {
 
         // 退出协程
 
-        let resource = ["config.json"]
-        let foo = function(){}
+        // 异步加载资源
+        let resource = [
+            "ShadowPlane.png",
+            "table/scene.json",
+            "table/skills.json",
+            "table/wave.json",
+            "table/unit.json",
+            "table/upgrade.json",
+            "table/equip.json"
+        ]
 
-        let loadingPage = new LoadingPage(resource,foo,this);
+        let loadingPage = new LoadingPage(resource,this.onResComplete,this);
         uiManager.showPage(loadingPage);
     }
 
@@ -78,5 +86,9 @@ class Main extends egret.DisplayObjectContainer {
 
         // 注意，这个函数会进入协程
         this.preloadRes();
+    }
+
+    onResComplete() {
+
     }
 }
