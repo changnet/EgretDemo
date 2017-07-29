@@ -6,35 +6,29 @@
 // 文件返回 undefined ，则此文件不会被加入到资源配置文件中。
 
 @RES.mapConfig("default.res.json", () => "resource", path => {
+    var typeMap = {
+        "jpg": "image",
+        "png": "image",
+        "webp": "image",
+        "json": "json",
+        "fnt": "font",
+        "pvr": "pvr",
+        "mp3": "sound"
+    }
+
     var ext = path.substr(path.lastIndexOf(".") + 1);
-    var type = "";
-    if (path == "config.json") {
-        type = "json";
-    } else {
-        if (path.indexOf("ui/") >= 0) {
-            let ext = path.substr(path.lastIndexOf(".") + 1);
-            let typeMap = {
-                "jpg": "image",
-                "png": "image",
-                "webp": "image",
-                "json": "json",
-                "fnt": "font",
-                "pvr": "pvr",
-                "mp3": "sound"
-            }
-            type = typeMap[ext];
-            if (type == "json") {
-                if (path.indexOf("png") < 0) {
-                    type = "sheet";
-                } else if (path.indexOf("movieclip") >= 0) {
-                    type = "movieclip";
-                };
-            }
-        } else {
-            type = "unit";
+
+    // 在ui目录下，一个合并后的png素材由一张png图片和一个json文件组成。这个json必须解析为egret.SpriteSheet对象
+    if (path.indexOf("ui/") >= 0) {
+        if ("json" == ext) {
+            return "sheet"
         }
     }
-    return type;
+    if (ext in typeMap) {
+        return typeMap[ext]
+    }
+
+    return "unit";
 })
 
 class Main extends egret.DisplayObjectContainer {
@@ -62,14 +56,10 @@ class Main extends egret.DisplayObjectContainer {
         // 异步加载资源
         let resource = [
             "ShadowPlane.png",
-            "table/scene.json",
-            "table/skills.json",
-            "table/wave.json",
-            "table/unit.json",
-            "table/upgrade.json",
-            "table/equip.json"
+            "config/equip_weapon.json"
         ]
 
+        // 上面加载完loading界面所需要的资源后，显示loading界面并加载游戏的其他资源
         let loadingPage = new LoadingPage(resource,this.onResComplete,this);
         uiManager.showPage(loadingPage);
     }
@@ -88,7 +78,8 @@ class Main extends egret.DisplayObjectContainer {
         this.preloadRes();
     }
 
-    onResComplete() {
-
+    private onResComplete() {
+        // 加载完资源，显示login界面
+        console.log("res load complete")
     }
 }
