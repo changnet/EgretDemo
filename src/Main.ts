@@ -46,6 +46,7 @@ class Main extends egret.DisplayObjectContainer {
             await RES.getResAsync("ui/gameUI.json");
             await RES.getResAsync("ui/bg.jpg");
             await RES.getResAsync("ui/ui.png");
+            await RES.getResAsync("ui/ui.json")
         }
         catch(e){
             console.error(e);
@@ -80,6 +81,7 @@ class Main extends egret.DisplayObjectContainer {
 
     private onResComplete() {
         // 加载完资源，显示login界面
-        console.log("res load complete")
+        var loginPage = new LoginPage();
+        uiManager.showPage(loginPage);
     }
 }
