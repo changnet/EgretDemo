@@ -1,28 +1,28 @@
 [
     {
-        "desc": "这是一把短剑",
-        "defense": 0,
-        "hp": 0,
-        "id": 10000,
-        "mp": 0,
         "moveSpeed": 0,
-        "name": "短剑",
+        "hp": 0,
         "iconId": 21000,
-        "crit": 0.01,
+        "id": 10000,
+        "desc": "这是一把短剑",
         "attack": 100,
-        "attackSpeed": 0
+        "name": "短剑",
+        "attackSpeed": 0,
+        "defense": 0,
+        "crit": 0.01,
+        "mp": 0
     },
     {
-        "desc": "这是一把长剑",
-        "defense": 0,
-        "hp": 0,
-        "id": 10001,
-        "mp": 0,
         "moveSpeed": 0,
-        "name": "长剑",
+        "hp": 0,
         "iconId": 21001,
-        "crit": 0.02,
+        "id": 10001,
+        "desc": "这是一把长剑",
         "attack": 300,
-        "attackSpeed": 0
+        "name": "长剑",
+        "attackSpeed": 0,
+        "defense": 0,
+        "crit": 0.02,
+        "mp": 0
     }
 ]

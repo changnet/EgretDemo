@@ -38,6 +38,7 @@ class LoginPage extends egret.DisplayObjectContainer {
     }
 
     private onButtonClick(e: egret.TouchEvent): void {
-        console.log("click on",e.target);
+        var roomPage = new RoomPage();
+        uiManager.showPage(roomPage);
     }
 }

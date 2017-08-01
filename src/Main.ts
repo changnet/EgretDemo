@@ -18,7 +18,8 @@
 
     var ext = path.substr(path.lastIndexOf(".") + 1);
 
-    // 在ui目录下，一个合并后的png素材由一张png图片和一个json文件组成。这个json必须解析为egret.SpriteSheet对象
+    // 在ui目录下，一个合并后的png素材由一张png图片和一个json文件组成。
+    // 这个json必须解析为egret.SpriteSheet对象才能通过RES.getRes("ui/ui.json#title");这种方式获取资源
     if (path.indexOf("ui/") >= 0) {
         if ("json" == ext) {
             return "sheet"
@@ -53,16 +54,7 @@ class Main extends egret.DisplayObjectContainer {
         }
 
         // 退出协程
-
-        // 异步加载资源
-        let resource = [
-            "ShadowPlane.png",
-            "config/equip_weapon.json"
-        ]
-
-        // 上面加载完loading界面所需要的资源后，显示loading界面并加载游戏的其他资源
-        let loadingPage = new LoadingPage(resource,this.onResComplete,this);
-        uiManager.showPage(loadingPage);
+        confManager.preloadRes();
     }
 
     public onAddToStage(){
@@ -74,12 +66,14 @@ class Main extends egret.DisplayObjectContainer {
         }
 
         uiManager = new UIManager(this);
+        confManager = new ConfManager();
+        confManager.addEventListener(ConfEvent.CONF_LOADED,this.onResComplete,this);
 
         // 注意，这个函数会进入协程
         this.preloadRes();
     }
 
-    private onResComplete() {
+    public onResComplete(ev: ConfEvent) {
         // 加载完资源，显示login界面
         var loginPage = new LoginPage();
         uiManager.showPage(loginPage);

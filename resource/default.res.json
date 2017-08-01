@@ -11,7 +11,8 @@
 			"ui.png": "ui/ui.png"
 		},
 		"config": {
-			"equip_weapon.json": "config/equip_weapon.json"
+			"equip_weapon.json": "config/equip_weapon.json",
+			"map_scene.json": "config/map_scene.json"
 		}
     }
 }

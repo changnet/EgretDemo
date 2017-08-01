@@ -11,6 +11,7 @@ var game_file_list = [
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/LoadingPage.js",
 	"bin-debug/ui/LoginPage.js",
+	"bin-debug/ui/RoomPage.js",
 	"bin-debug/ui/UIManager.js",
 	//----auto game_file_list end----
 ];

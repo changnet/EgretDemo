@@ -4,11 +4,12 @@ class LoadingPage extends egret.DisplayObjectContainer{
     private _count:number;
     private _total:number;
 
-    constructor(private fileURLS:string[],
-        private callbackFun:Function,private callbackObj:any){
+    constructor(total: number){
         
         super();
 
+        this._count = 0;
+        this._total = total;
         let bgImage = "ui/bg.jpg";
         this.once(egret.Event.ADDED_TO_STAGE,() => {
             this.onAdd(bgImage)
@@ -36,30 +37,9 @@ class LoadingPage extends egret.DisplayObjectContainer{
         this.addChild(this.totalProgress);
     }
 
-    public onEnterPage() {
-
-        // 把fileURLS里的每个元素中的resource/替换为空串
-        this.fileURLS = this.fileURLS.map( item => item.replace("resource/","") );
-
-        // 初始化进度条进度为0
-        this._count = 0;
-        this._total = this.fileURLS.length;
-
-        // 开始加载资源
-        // 每个元素加载完成调用onOnceComplete，所有加载完后调用onAllComplete
-        Promise.all(this.fileURLS.map(item => RES.getResAsync(item,this.onOnceComplete,this))).then(
-            () => this.onAllComplete() );
-    }
-
-    private onOnceComplete() {
+    public update() {
         this._count ++;
         this.totalProgress.ratio = this._count / this._total;
     }
 
-    private onAllComplete() {
-        if (this.callbackFun)
-        {
-            setTimeout( () => this.callbackFun.call(this.callbackObj),1000);
-        }
-    }
 }
