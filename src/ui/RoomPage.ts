@@ -1,11 +1,14 @@
 class MiniMap extends egret.DisplayObjectContainer {
     private _lock: egret.Bitmap;
-    private _width: number;
+    private frameWidth: number;
     private _star: egret.Bitmap[];
+    private sceneID: number;
 
-    constructor(conf: any) {
+    constructor(conf: any,starNum: number) {
         super();
         this._star = [];
+
+        this.sceneID = conf.id
 
         // 背景
         var bgImage = new egret.Bitmap();
@@ -19,10 +22,10 @@ class MiniMap extends egret.DisplayObjectContainer {
         frame.texture = RES.getRes("ui/ui.json#bk");
         this.addChild(frame);
 
-        this._width = bgImage.width;
+        this.frameWidth = frame.width;
 
-        this.lock = true;
-        this.star = 4;
+        this.lock = (1 == this.sceneID % 2);
+        this.star = starNum;
     }
 
     public set lock(value: boolean) {
@@ -34,11 +37,14 @@ class MiniMap extends egret.DisplayObjectContainer {
 
             this.addChild(this._lock)
         }
+        this.touchEnabled = !value  // 开启触摸事件，否则无法触发TOUCH_TAP事件
         this._lock.visible = value;
     }
 
     public set star(value: number) {
         // 创建足够的星星
+        var space: number = 2; // 每颗星之前相隔2像素
+        var startX: number = 0;
         for ( var idx = this._star.length;idx < value;idx ++ ) {
             let oneStar = new egret.Bitmap();
             oneStar.texture = RES.getRes("ui/ui.json#star")
@@ -46,9 +52,14 @@ class MiniMap extends egret.DisplayObjectContainer {
             // 设置绝对锚点X。坐标x = oneStar.x - oneStar.anchorOffsetX
             //oneStar.anchorOffsetX = oneStar.width / 2;
 
-            // 每颗星之前相隔2像素
-            oneStar.x = 25 + idx * (oneStar.width + 2);
-            oneStar.y = 0
+            // 计算出星星的总宽度,无论多少颗星星，总是居中对齐
+            if (!startX) {
+                var starWidth = value*oneStar.width + (value - 1)*space
+                startX = this.frameWidth * 0.5 - starWidth * 0.5
+            }
+
+            oneStar.x = startX + idx * (oneStar.width + space);
+            oneStar.y = 8
 
             this._star.push(oneStar);
             this.addChild(oneStar);
@@ -59,8 +70,11 @@ class MiniMap extends egret.DisplayObjectContainer {
 
 class RoomPage extends egret.DisplayObjectContainer {
 
+    private mapList: MiniMap[];
+
     constructor() {
         super();
+        this.mapList = [];
 
         this.once(egret.Event.ADDED_TO_STAGE,this.onAdd,this);
     }
@@ -82,12 +96,33 @@ class RoomPage extends egret.DisplayObjectContainer {
         var conf = confManager.getConf("config/map_scene.json")
 
         for (let sceneConf of conf) {
-            let minMap = new MiniMap(sceneConf);
-            minMap.x = disX + Math.floor(index % 2)*310;
-            minMap.y = disY + Math.floor(index / 2)*230;
+            let miniMap = new MiniMap(sceneConf,index > 4 ? 4 : index);
+            miniMap.x = disX + Math.floor(index % 2)*310;
+            miniMap.y = disY + Math.floor(index / 2)*230;
 
-            this.addChild(minMap);
+            this.addChild(miniMap);
+            this.mapList.push(miniMap);
             index ++;
+        }
+    }
+
+    private onMiniMapClick(e: egret.TouchEvent): void {
+        var miniMap: MiniMap = e.target as MiniMap;
+
+        // change to map scene
+        console.log("entering map",miniMap);
+    }
+
+    public onEnterPage(): void {
+        for ( let miniMap of this.mapList ) {
+            miniMap.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onMiniMapClick,this);
+        }
+    }
+
+    public onLeavePage():void {
+        console.log("on leave room page")
+        for ( let miniMap of this.mapList ) {
+            miniMap.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onMiniMapClick,this);
         }
     }
 }
