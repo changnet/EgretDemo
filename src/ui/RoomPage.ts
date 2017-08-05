@@ -2,13 +2,13 @@ class MiniMap extends egret.DisplayObjectContainer {
     private _lock: egret.Bitmap;
     private frameWidth: number;
     private _star: egret.Bitmap[];
-    private sceneID: number;
+    private _sceneID: number;
 
     constructor(conf: any,starNum: number) {
         super();
         this._star = [];
 
-        this.sceneID = conf.id
+        this._sceneID = conf.id
 
         // 背景
         var bgImage = new egret.Bitmap();
@@ -24,7 +24,7 @@ class MiniMap extends egret.DisplayObjectContainer {
 
         this.frameWidth = frame.width;
 
-        this.lock = (1 == this.sceneID % 2);
+        this.lock = (1 == this._sceneID % 2);
         this.star = starNum;
     }
 
@@ -64,6 +64,10 @@ class MiniMap extends egret.DisplayObjectContainer {
             this._star.push(oneStar);
             this.addChild(oneStar);
         }
+    }
+
+    public get sceneID(): number {
+        return this._sceneID;
     }
 }
 
@@ -110,7 +114,11 @@ class RoomPage extends egret.DisplayObjectContainer {
         var miniMap: MiniMap = e.target as MiniMap;
 
         // change to map scene
-        console.log("entering map",miniMap);
+        if ( !sceneManager ) {
+            sceneManager = new SceneManager();
+        }
+
+        sceneManager.enterScene(miniMap.sceneID);
     }
 
     public onEnterPage(): void {
@@ -120,7 +128,6 @@ class RoomPage extends egret.DisplayObjectContainer {
     }
 
     public onLeavePage():void {
-        console.log("on leave room page")
         for ( let miniMap of this.mapList ) {
             miniMap.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onMiniMapClick,this);
         }

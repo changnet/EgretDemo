@@ -1,0 +1,134 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 1.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffff61dd",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        4.3789687E-13,
+        -5.008956E-06,
+        5.008956E-06
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "render": {
+      "renderMode": "Billboard",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 0.0,
+    "bursts": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0.05",
+        "1"
+      ]
+    ],
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 0.55,
+    "loop": false,
+    "type": "Const",
+    "max": 0.2,
+    "min": 0.2
+  },
+  "rotationBirth": {
+    "type": "RandomConst",
+    "max": 360.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 24.0,
+    "min": 24.0
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0",
+        "1"
+      ],
+      [
+        "pos",
+        "0.4570313",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.4570313",
+        "1"
+      ],
+      [
+        "pos",
+        "0.4570313",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.4570313",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "0"
+      ],
+      [
+        "ctrl",
+        "1",
+        "0"
+      ]
+    ]
+  }
+}

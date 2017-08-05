@@ -1,0 +1,217 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 50.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffffffff",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        180.0,
+        180.0
+      ],
+      "scale": [
+        0.307692319,
+        0.307692319,
+        0.307692319
+      ],
+      "position": [
+        0.0,
+        0.0,
+        -152.0
+      ]
+    },
+    "render": {
+      "renderMode": "Billboard",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "2"
+  },
+  "emission": {
+    "rate": 50.0,
+    "bursts": [],
+    "type": "Const",
+    "max": 50.0,
+    "min": 50.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 0.0,
+    "loop": true,
+    "type": "RandomConst",
+    "max": 0.8,
+    "min": 0.6
+  },
+  "shape": {
+    "type": "Cone",
+    "randomDirection": false,
+    "cone": {
+      "type": "Volume",
+      "radius": 200.0,
+      "length": 400.0,
+      "angle": 10.0
+    }
+  },
+  "rotationBirth": {
+    "type": "RandomConst",
+    "max": 360.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "RandomConst",
+    "max": 4.0,
+    "min": 2.0
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "velocityOver": {
+      "worldSpace": false,
+      "type": "OneBezier",
+      "xBezier1": [
+        [
+          "pos",
+          "0",
+          "0"
+        ],
+        [
+          "ctrl",
+          "0.3333333",
+          "0"
+        ],
+        [
+          "pos",
+          "1",
+          "0"
+        ],
+        [
+          "ctrl",
+          "1",
+          "0"
+        ]
+      ],
+      "yBezier1": [
+        [
+          "pos",
+          "0",
+          "0"
+        ],
+        [
+          "ctrl",
+          "0.3333333",
+          "0"
+        ],
+        [
+          "pos",
+          "1",
+          "0"
+        ],
+        [
+          "ctrl",
+          "1",
+          "0"
+        ]
+      ],
+      "zBezier1": [
+        [
+          "pos",
+          "0",
+          "500"
+        ],
+        [
+          "ctrl",
+          "0.3333333",
+          "166.6667"
+        ],
+        [
+          "pos",
+          "1",
+          "0"
+        ],
+        [
+          "ctrl",
+          "0.6666666",
+          "0"
+        ]
+      ]
+    },
+    "type": "RandomConst",
+    "max": 1200.0,
+    "min": 700.0
+  },
+  "followTarget": {
+    "followRotation": true,
+    "followScale": true
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.3333333",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "0.12"
+      ],
+      [
+        "ctrl",
+        "0.6666666",
+        "0.7866667"
+      ]
+    ]
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0xffff004d"
+      ],
+      [
+        "0.1441215",
+        "0xffb7001d"
+      ],
+      [
+        "0.2323491",
+        "0xc18b0000"
+      ],
+      [
+        "0.3529412",
+        "0x6e730000"
+      ],
+      [
+        "0.7353017",
+        "0x2c2b0000"
+      ],
+      [
+        "1",
+        "0x002b0000"
+      ]
+    ]
+  }
+}

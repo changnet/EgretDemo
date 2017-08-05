@@ -1,0 +1,120 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 5.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xff000000",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        5.008956E-06,
+        180.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        137.000092
+      ]
+    },
+    "render": {
+      "renderMode": "StretchedBillboard",
+      "cameraScale": 0.0,
+      "lengthScale": 2.0,
+      "speedScale": 0.02
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 0.0,
+    "bursts": [
+      [
+        "0",
+        "15"
+      ]
+    ],
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 6.0,
+    "loop": false,
+    "type": "RandomConst",
+    "max": 0.3,
+    "min": 0.15
+  },
+  "shape": {
+    "type": "Cone",
+    "randomDirection": false,
+    "cone": {
+      "type": "Volume",
+      "radius": 400.0,
+      "length": 500.0,
+      "angle": 50.0
+    }
+  },
+  "rotationBirth": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "RandomConst",
+    "max": 3.0,
+    "min": 4.0
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "RandomConst",
+    "max": 3000.0,
+    "min": 4500.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "0"
+      ],
+      [
+        "ctrl",
+        "1",
+        "0"
+      ]
+    ]
+  }
+}

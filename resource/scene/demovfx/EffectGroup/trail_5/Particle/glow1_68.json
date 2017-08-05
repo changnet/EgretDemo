@@ -1,0 +1,92 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 1.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffff4332",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        180.000015,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        118.999954
+      ]
+    },
+    "render": {
+      "renderMode": "Mesh",
+      "meshFile": "Model/particleMesh_Ring_07_69.esm",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 8.0,
+    "bursts": [],
+    "type": "Const",
+    "max": 8.0,
+    "min": 8.0
+  },
+  "life": {
+    "duration": 2.0,
+    "delay": 1.35,
+    "loop": false,
+    "type": "Const",
+    "max": 2.0,
+    "min": 2.0
+  },
+  "rotationBirth": {
+    "type": "RandomConst",
+    "max": 360.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 1.5,
+    "min": 1.5
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "rotationSpeed": {
+    "type": "Const",
+    "max": [
+      0.0,
+      0.0,
+      -800.0
+    ],
+    "min": [
+      0.0,
+      0.0,
+      -800.0
+    ]
+  }
+}

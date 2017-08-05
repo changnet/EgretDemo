@@ -1,0 +1,154 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 6.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffffffff",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        270.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ],
+      "position": [
+        0.0,
+        0.0,
+        121.799942
+      ]
+    },
+    "render": {
+      "renderMode": "Billboard",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "-1"
+  },
+  "emission": {
+    "rate": 0.0,
+    "bursts": [
+      [
+        "0",
+        "2"
+      ],
+      [
+        "0.02",
+        "2"
+      ],
+      [
+        "0.04",
+        "2"
+      ]
+    ],
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 0.0,
+    "loop": false,
+    "type": "Const",
+    "max": 0.2,
+    "min": 0.2
+  },
+  "rotationBirth": {
+    "type": "RandomConst",
+    "max": 360.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 10.0,
+    "min": 10.0
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "0"
+      ],
+      [
+        "ctrl",
+        "1",
+        "0"
+      ]
+    ]
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0x00ffffff"
+      ],
+      [
+        "0.05882353",
+        "0x32ffffff"
+      ],
+      [
+        "0.1264668",
+        "0x6cff90aa"
+      ],
+      [
+        "0.2970626",
+        "0xffff88a1"
+      ],
+      [
+        "0.4352941",
+        "0x31ff819a"
+      ],
+      [
+        "0.4735332",
+        "0x2dff8099"
+      ],
+      [
+        "0.679408",
+        "0x1bff1f2e"
+      ],
+      [
+        "1",
+        "0x00ff1f2e"
+      ]
+    ]
+  }
+}

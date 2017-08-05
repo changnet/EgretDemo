@@ -1,0 +1,385 @@
+{
+  "version": "1.1",
+  "type": "scene",
+  "uv2": "uv2.eum",
+  "propertyAnimations": [
+    {
+      "id": "1",
+      "auto": "trail_6_ArrowVFX.epa",
+      "clips": [
+        {
+          "path": "ProAnim/trail_6_ArrowVFX.epa",
+          "name": "trail_6_ArrowVFX.epa",
+          "loop": "false"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "type": "DirectLight",
+      "insID": "10938",
+      "parent": "-1",
+      "name": "_Directionallight_4",
+      "pos": {
+        "x": "1325",
+        "y": "2060",
+        "z": "648"
+      },
+      "rot": {
+        "rx": "0.2641799",
+        "ry": "-0.7131492",
+        "rz": "0.5663962",
+        "rw": "0.3175255"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "staticType": "",
+      "lightInfo": {
+        "id": "1",
+        "diffuseColor": "0xffffff",
+        "ambientColor": "0x000000",
+        "intensity": "0.5",
+        "halfIntensity": "0",
+        "falloff": "0",
+        "radius": "0"
+      }
+    },
+    {
+      "type": "Camera3D",
+      "insID": "11070",
+      "parent": "-1",
+      "name": "Camera",
+      "fov": "60",
+      "clipNear": "30",
+      "clipFar": "100000",
+      "pos": {
+        "x": "1139.113",
+        "y": "802.545",
+        "z": "-2647.267"
+      },
+      "rot": {
+        "rx": "0.1923898",
+        "ry": "-0.3186531",
+        "rz": "0.06622063",
+        "rw": "0.925776"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "staticType": ""
+    },
+    {
+      "type": "Mesh",
+      "insID": "11036",
+      "parent": "-1",
+      "name": "Sphere_2",
+      "path": "Model/1_Sphere_2.esm",
+      "pos": {
+        "x": "0",
+        "y": "193",
+        "z": "-2080"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "5",
+        "sy": "5",
+        "sz": "5"
+      },
+      "mats": "3",
+      "lightIds": "1",
+      "staticType": "",
+      "uv2Id": "2"
+    },
+    {
+      "type": "EffectGroup",
+      "insID": "11030",
+      "parent": "-1",
+      "name": "lightning_9",
+      "path": "EffectGroup/lightning_9/EffectsGroup.json",
+      "pos": {
+        "x": "0",
+        "y": "193",
+        "z": "2988"
+      },
+      "rot": {
+        "rx": "1",
+        "ry": "0",
+        "rz": "0",
+        "rw": "0"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "staticType": ""
+    },
+    {
+      "type": "EffectGroup",
+      "insID": "10984",
+      "parent": "-1",
+      "name": "ray_8",
+      "path": "EffectGroup/ray_8/EffectsGroup.json",
+      "pos": {
+        "x": "0",
+        "y": "193",
+        "z": "3062"
+      },
+      "rot": {
+        "rx": "1",
+        "ry": "0",
+        "rz": "0",
+        "rw": "0"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "staticType": ""
+    },
+    {
+      "type": "EffectGroup",
+      "insID": "10958",
+      "parent": "-1",
+      "name": "ray_10",
+      "path": "EffectGroup/ray_10/EffectsGroup.json",
+      "pos": {
+        "x": "0",
+        "y": "190",
+        "z": "3246"
+      },
+      "rot": {
+        "rx": "1",
+        "ry": "1.544532E-39",
+        "rz": "2.508069E-24",
+        "rw": "0"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "staticType": ""
+    },
+    {
+      "type": "Mesh",
+      "insID": "10892",
+      "parent": "-1",
+      "name": "Plane_1",
+      "path": "Model/45_Plane_1.esm",
+      "pos": {
+        "x": "0",
+        "y": "-554",
+        "z": "-2080"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "100",
+        "sy": "10",
+        "sz": "100"
+      },
+      "mats": "3",
+      "lightIds": "1",
+      "staticType": "",
+      "uv2Id": "62"
+    },
+    {
+      "type": "EffectGroup",
+      "insID": "10780",
+      "parent": "-1",
+      "name": "trail_5",
+      "path": "EffectGroup/trail_5/EffectsGroup.json",
+      "pos": {
+        "x": "0",
+        "y": "193",
+        "z": "-1068"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "0.4",
+        "sy": "0.4",
+        "sz": "0.4"
+      },
+      "staticType": ""
+    },
+    {
+      "type": "Mesh",
+      "insID": "10776",
+      "parent": "-1",
+      "name": "Sphere_3",
+      "path": "Model/1_Sphere_2.esm",
+      "pos": {
+        "x": "0",
+        "y": "193",
+        "z": "3770"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "5",
+        "sy": "5",
+        "sz": "5"
+      },
+      "mats": "3",
+      "lightIds": "1",
+      "staticType": "",
+      "uv2Id": "81"
+    },
+    {
+      "type": "EffectGroup",
+      "insID": "10710",
+      "parent": "-1",
+      "name": "trail_6",
+      "path": "EffectGroup/trail_6/EffectsGroup.json",
+      "pos": {
+        "x": "0",
+        "y": "190",
+        "z": "289.0285"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "propertyAnimsId": "1",
+      "staticType": ""
+    },
+    {
+      "type": "EffectGroup",
+      "insID": "10604",
+      "parent": "-1",
+      "name": "trail_7",
+      "path": "EffectGroup/trail_7/EffectsGroup.json",
+      "pos": {
+        "x": "0",
+        "y": "193",
+        "z": "-1179"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "staticType": ""
+    },
+    {
+      "type": "Mesh",
+      "insID": "-3905660",
+      "parent": "-1",
+      "name": "lookAtObj",
+      "path": "Model/73_lookAtObj.esm",
+      "pos": {
+        "x": "0",
+        "y": "190",
+        "z": "99"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "103",
+      "lightIds": "1",
+      "staticType": "",
+      "uv2Id": "102"
+    }
+  ],
+  "mats": [
+    {
+      "id": "3",
+      "name": "Egret3D/d/E3D_D_Normal",
+      "diffuseTextureName": "Texture/black.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x323232",
+      "specularColor": "0x000000",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "80",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "false",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "NORMAL"
+    },
+    {
+      "id": "103",
+      "name": "Particles/Additive_Layer",
+      "diffuseTextureName": "Texture/Spark.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "false",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    }
+  ]
+}

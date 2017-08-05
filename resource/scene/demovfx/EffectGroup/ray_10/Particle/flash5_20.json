@@ -1,0 +1,143 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 2.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffffd187",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        2.5
+      ],
+      "position": [
+        0.0,
+        0.0,
+        369.999878
+      ]
+    },
+    "render": {
+      "renderMode": "Mesh",
+      "meshFile": "Model/particleMesh_Plane_01_21.esm",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 0.0,
+    "bursts": [
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 0.4,
+    "loop": false,
+    "type": "Const",
+    "max": 0.4,
+    "min": 0.4
+  },
+  "rotationBirth": {
+    "type": "Const",
+    "max": 360.0,
+    "min": 360.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 6.0,
+    "min": 6.0
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0",
+        "1"
+      ],
+      [
+        "pos",
+        "0.6074219",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.6074219",
+        "1"
+      ],
+      [
+        "pos",
+        "0.6074219",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.6074219",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "0"
+      ],
+      [
+        "ctrl",
+        "1",
+        "0"
+      ]
+    ]
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0xffffffff"
+      ],
+      [
+        "1",
+        "0xffffffff"
+      ]
+    ]
+  }
+}

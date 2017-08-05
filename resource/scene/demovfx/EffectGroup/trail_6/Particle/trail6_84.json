@@ -1,0 +1,129 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 10.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffff3b86",
+    "gravity": 0.0,
+    "prewarm": true,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        55.0
+      ]
+    },
+    "render": {
+      "renderMode": "StretchedBillboard",
+      "cameraScale": 0.0,
+      "lengthScale": -3.66,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 30.0,
+    "bursts": [],
+    "type": "Const",
+    "max": 30.0,
+    "min": 30.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 0.0,
+    "loop": false,
+    "type": "Const",
+    "max": 0.3,
+    "min": 0.3
+  },
+  "rotationBirth": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "RandomConst",
+    "max": 6.24000025,
+    "min": 12.4800005
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": -78.0,
+    "min": -78.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "0"
+      ],
+      [
+        "ctrl",
+        "0.3333333",
+        "0.6666667"
+      ],
+      [
+        "pos",
+        "1",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.6666666",
+        "1"
+      ]
+    ]
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0x00ffffff"
+      ],
+      [
+        "0.202945",
+        "0xf1ffffff"
+      ],
+      [
+        "0.2147097",
+        "0xfffffcf8"
+      ],
+      [
+        "0.5441214",
+        "0x94ffbb45"
+      ],
+      [
+        "1",
+        "0x00ffbb45"
+      ]
+    ]
+  }
+}

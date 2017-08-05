@@ -1,0 +1,208 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 10.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffff321f",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        180.0,
+        180.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        193.0,
+        3062.0
+      ]
+    },
+    "render": {
+      "renderMode": "Mesh",
+      "meshFile": "Model/particleMesh_Plane_01_7.esm",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "1"
+  },
+  "emission": {
+    "rate": 3.0,
+    "bursts": [],
+    "type": "Const",
+    "max": 3.0,
+    "min": 3.0
+  },
+  "life": {
+    "duration": 2.0,
+    "delay": 0.0,
+    "loop": false,
+    "type": "Const",
+    "max": 1.0,
+    "min": 1.0
+  },
+  "rotationBirth": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 16.0,
+    "min": 16.0
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "velocityOver": {
+      "worldSpace": false,
+      "type": "OneBezier",
+      "xBezier1": [
+        [
+          "pos",
+          "0",
+          "0"
+        ],
+        [
+          "ctrl",
+          "0.3333333",
+          "0"
+        ],
+        [
+          "pos",
+          "1",
+          "0"
+        ],
+        [
+          "ctrl",
+          "1",
+          "0"
+        ]
+      ],
+      "yBezier1": [
+        [
+          "pos",
+          "0",
+          "0"
+        ],
+        [
+          "ctrl",
+          "0.3333333",
+          "0"
+        ],
+        [
+          "pos",
+          "1",
+          "0"
+        ],
+        [
+          "ctrl",
+          "1",
+          "0"
+        ]
+      ],
+      "zLine1": [
+        [
+          "0",
+          "-600"
+        ],
+        [
+          "1",
+          "-72"
+        ]
+      ]
+    },
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "0.28"
+      ],
+      [
+        "ctrl",
+        "0.2458034",
+        "0.7716067"
+      ],
+      [
+        "pos",
+        "0.7374101",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.4916067",
+        "1"
+      ],
+      [
+        "pos",
+        "0.7374101",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.82494",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "1"
+      ],
+      [
+        "ctrl",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0x00ffffff"
+      ],
+      [
+        "0.05587854",
+        "0xffffffff"
+      ],
+      [
+        "0.5705959",
+        "0xffffffff"
+      ],
+      [
+        "0.8117647",
+        "0x49ffffff"
+      ],
+      [
+        "1",
+        "0x00ffffff"
+      ]
+    ]
+  }
+}

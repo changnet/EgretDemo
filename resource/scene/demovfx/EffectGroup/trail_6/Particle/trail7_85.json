@@ -1,0 +1,154 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 10.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "RandomConst",
+    "colorConst1": "0xff380500",
+    "colorConst2": "0x8b000000",
+    "gravity": 0.0,
+    "prewarm": true,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        -114.0
+      ]
+    },
+    "render": {
+      "renderMode": "Mesh",
+      "meshFile": "Model/particleMesh_Ring_05_86.esm",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "1"
+  },
+  "emission": {
+    "rate": 15.0,
+    "bursts": [],
+    "type": "Const",
+    "max": 15.0,
+    "min": 15.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 0.0,
+    "loop": true,
+    "type": "RandomConst",
+    "max": 1.0,
+    "min": 0.5
+  },
+  "rotationBirth": {
+    "type": "RandomConst",
+    "max": 360.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 3.64000034,
+    "min": 3.64000034
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "velocityOver": {
+      "worldSpace": false,
+      "type": "Const",
+      "min": [
+        0.0,
+        0.0,
+        -520.0
+      ],
+      "max": [
+        0.0,
+        0.0,
+        -520.0
+      ]
+    },
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "followTarget": {
+    "followRotation": true,
+    "followScale": true
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "line1": [
+      [
+        "0",
+        "0.5361217"
+      ],
+      [
+        "0.3844344",
+        "0.8636251"
+      ],
+      [
+        "1",
+        "1"
+      ]
+    ]
+  },
+  "rotationSpeed": {
+    "type": "Const",
+    "max": [
+      0.0,
+      0.0,
+      -200.0
+    ],
+    "min": [
+      0.0,
+      0.0,
+      -200.0
+    ]
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0x00ffffff"
+      ],
+      [
+        "0.1499962",
+        "0xffffffff"
+      ],
+      [
+        "0.3647059",
+        "0x6bffffff"
+      ],
+      [
+        "0.5176471",
+        "0x00ffffff"
+      ],
+      [
+        "1",
+        "0x00ffffff"
+      ]
+    ]
+  }
+}

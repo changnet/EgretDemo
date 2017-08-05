@@ -1,0 +1,115 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 1.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xff710000",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        270.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        -181.000015
+      ]
+    },
+    "render": {
+      "renderMode": "Billboard",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "2"
+  },
+  "emission": {
+    "rate": 0.0,
+    "bursts": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0.02",
+        "1"
+      ],
+      [
+        "0.04",
+        "1"
+      ]
+    ],
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "life": {
+    "duration": 1.0,
+    "delay": 1.3,
+    "loop": false,
+    "type": "Const",
+    "max": 0.3,
+    "min": 0.3
+  },
+  "rotationBirth": {
+    "type": "RandomConst",
+    "max": 360.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 10.000001,
+    "min": 10.000001
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0x00ff691f"
+      ],
+      [
+        "0.07353323",
+        "0x3fff691f"
+      ],
+      [
+        "0.2264744",
+        "0xc2ff1f1f"
+      ],
+      [
+        "0.2970626",
+        "0xfff01c1d"
+      ],
+      [
+        "1",
+        "0x005c0011"
+      ]
+    ]
+  }
+}

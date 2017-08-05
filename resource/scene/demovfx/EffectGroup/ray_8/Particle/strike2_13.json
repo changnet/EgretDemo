@@ -1,0 +1,144 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 8.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffffc19d",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        -1.00179122E-05,
+        -1.00179122E-05
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "render": {
+      "renderMode": "StretchedBillboard",
+      "cameraScale": 0.0,
+      "lengthScale": -1.0,
+      "speedScale": 0.3
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 0.0,
+    "bursts": [
+      [
+        "0",
+        "8"
+      ]
+    ],
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "life": {
+    "duration": 0.5,
+    "delay": 0.0,
+    "loop": false,
+    "type": "RandomConst",
+    "max": 0.3,
+    "min": 0.5
+  },
+  "shape": {
+    "type": "Cone",
+    "randomDirection": false,
+    "cone": {
+      "type": "VolumeShell",
+      "radius": 1.0,
+      "length": 70.0,
+      "angle": 40.0
+    }
+  },
+  "rotationBirth": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "RandomConst",
+    "max": 2.0,
+    "min": 1.0
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "velocityLimit": {
+      "dampen": 1.0,
+      "type": "OneBezier",
+      "max": 0.0,
+      "min": 0.0,
+      "line1": [
+        [
+          "0",
+          "2000"
+        ],
+        [
+          "0.4575233",
+          "2000"
+        ],
+        [
+          "0.5307378",
+          "1289.555"
+        ],
+        [
+          "1",
+          "619.4691"
+        ]
+      ]
+    },
+    "type": "RandomConst",
+    "max": 3000.0,
+    "min": 2000.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "0"
+      ],
+      [
+        "ctrl",
+        "1",
+        "0"
+      ]
+    ]
+  }
+}

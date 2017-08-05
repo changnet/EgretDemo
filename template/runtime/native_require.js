@@ -8,6 +8,7 @@ var game_file_list = [
 	"polyfill/promise.js",
 	"bin-debug/conf/ConfManager.js",
 	"bin-debug/Main.js",
+	"bin-debug/scene/SceneManager.js",
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/LoadingPage.js",
 	"bin-debug/ui/LoginPage.js",

@@ -1,0 +1,372 @@
+{
+  "version": "1.1",
+  "type": "EffectGroup",
+  "auto": "false",
+  "loop": "false",
+  "propertyAnimations": [],
+  "nodes": [
+    {
+      "type": "ParticleEmitter",
+      "insID": "10604",
+      "parent": "-1",
+      "name": "trail_7",
+      "path": "Particle/trail_7_92.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "92",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10670",
+      "parent": "10604",
+      "name": "smoke1",
+      "path": "Particle/smoke1_93.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "1884"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "93",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10928",
+      "parent": "10604",
+      "name": "glow3",
+      "path": "Particle/glow3_94.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "121.7999"
+      },
+      "rot": {
+        "rx": "-0.7071068",
+        "ry": "0",
+        "rz": "0",
+        "rw": "0.7071068"
+      },
+      "scale": {
+        "sx": "0.4",
+        "sy": "0.4",
+        "sz": "0.4"
+      },
+      "mats": "94",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10730",
+      "parent": "10604",
+      "name": "glow3",
+      "path": "Particle/glow3_95.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "121.7999"
+      },
+      "rot": {
+        "rx": "-0.7071068",
+        "ry": "0",
+        "rz": "0",
+        "rw": "0.7071068"
+      },
+      "scale": {
+        "sx": "0.4",
+        "sy": "0.4",
+        "sz": "0.4"
+      },
+      "mats": "95",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "11118",
+      "parent": "10604",
+      "name": "ray2",
+      "path": "Particle/ray2_96.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "194.2"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1.5",
+        "sy": "1.5",
+        "sz": "1.5"
+      },
+      "mats": "96",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10532",
+      "parent": "11118",
+      "name": "falloff1",
+      "path": "Particle/falloff1_99.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "-0.7071068",
+        "ry": "0",
+        "rz": "0",
+        "rw": "0.7071068"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "99",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10560",
+      "parent": "10604",
+      "name": "trail2",
+      "path": "Particle/trail2_101.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "300"
+      },
+      "rot": {
+        "rx": "1",
+        "ry": "0",
+        "rz": "0",
+        "rw": "-4.371139E-08"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "101",
+      "staticType": ""
+    }
+  ],
+  "mats": [
+    {
+      "id": "92",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Trail_02.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "93",
+      "name": "Mobile/Particles/Alpha Blended",
+      "diffuseTextureName": "Texture/Fx_Smoke_01.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "false",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ALPHA"
+    },
+    {
+      "id": "94",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Glow_03.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "95",
+      "name": "Mobile/Particles/Alpha Blended",
+      "diffuseTextureName": "Texture/Fx_Glow_01.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "false",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ALPHA"
+    },
+    {
+      "id": "96",
+      "name": "Mobile/Particles/Alpha Blended",
+      "diffuseTextureName": "Texture/Fx_Ray_02.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "false",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ALPHA"
+    },
+    {
+      "id": "99",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Falloff_01.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "101",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Trail_02.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    }
+  ]
+}

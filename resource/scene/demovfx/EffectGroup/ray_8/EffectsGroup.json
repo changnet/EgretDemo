@@ -1,0 +1,323 @@
+{
+  "version": "1.1",
+  "type": "EffectGroup",
+  "auto": "false",
+  "loop": "false",
+  "propertyAnimations": [],
+  "nodes": [
+    {
+      "type": "ParticleEmitter",
+      "insID": "10984",
+      "parent": "-1",
+      "name": "ray_8",
+      "path": "Particle/ray_8_6.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "6",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10726",
+      "parent": "10984",
+      "name": "flash4",
+      "path": "Particle/flash4_8.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "8",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10976",
+      "parent": "10726",
+      "name": "glow3",
+      "path": "Particle/glow3_9.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "9",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10762",
+      "parent": "10726",
+      "name": "dash4",
+      "path": "Particle/dash4_10.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "10",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10862",
+      "parent": "10726",
+      "name": "ray3",
+      "path": "Particle/ray3_11.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "0",
+        "ry": "0",
+        "rz": "0",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "11",
+      "staticType": ""
+    },
+    {
+      "type": "ParticleEmitter",
+      "insID": "10854",
+      "parent": "10726",
+      "name": "strike2",
+      "path": "Particle/strike2_13.json",
+      "pos": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "rot": {
+        "rx": "7.642742E-15",
+        "ry": "-8.742278E-08",
+        "rz": "-8.742278E-08",
+        "rw": "1"
+      },
+      "scale": {
+        "sx": "1",
+        "sy": "1",
+        "sz": "1"
+      },
+      "mats": "13",
+      "staticType": ""
+    }
+  ],
+  "mats": [
+    {
+      "id": "6",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Ray_03.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "8",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Flash_04.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "9",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Glow_03.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "10",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Dash_04.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "11",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Ray_03.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    },
+    {
+      "id": "13",
+      "name": "Mobile/Particles/Additive",
+      "diffuseTextureName": "Texture/Fx_Strike_02.png",
+      "normalTextureName": "",
+      "specularTextureName": "",
+      "shadowTextureName": "",
+      "diffuseColor": "0xffffff",
+      "ambientColor": "0x000000",
+      "specularColor": "0xffffff",
+      "tintColor": "0x80808080",
+      "alpha": "1",
+      "cutAlpha": "0",
+      "specularLevel": "1",
+      "gloss": "1",
+      "ambientPower": "1",
+      "diffusePower": "1",
+      "normalPower": "1",
+      "castShadow": "false",
+      "acceptShadow": "false",
+      "smooth": "true",
+      "repeat": "true",
+      "bothside": "true",
+      "drawMode": "4",
+      "cullMode": "1029",
+      "blendMode": "ADD"
+    }
+  ]
+}

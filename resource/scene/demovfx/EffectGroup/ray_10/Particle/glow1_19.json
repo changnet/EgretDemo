@@ -1,0 +1,147 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 200.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xfffdd0ff",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        5.008956E-06,
+        -5.008956E-06
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        0.4
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "render": {
+      "renderMode": "Billboard",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 1000.0,
+    "bursts": [],
+    "type": "Const",
+    "max": 1000.0,
+    "min": 1000.0
+  },
+  "life": {
+    "duration": 0.3,
+    "delay": 0.0,
+    "loop": false,
+    "type": "Const",
+    "max": 0.6,
+    "min": 0.6
+  },
+  "shape": {
+    "type": "HemiSphere",
+    "emitFromShell": true,
+    "randomDirection": false,
+    "hemiSphereRadius": 500.0
+  },
+  "rotationBirth": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "Const",
+    "max": 0.4,
+    "min": 0.4
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "0"
+      ],
+      [
+        "ctrl",
+        "0.1870025",
+        "1.081195"
+      ],
+      [
+        "pos",
+        "0.5610075",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.374005",
+        "1"
+      ],
+      [
+        "pos",
+        "0.5610075",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.7073383",
+        "1"
+      ],
+      [
+        "pos",
+        "1",
+        "1"
+      ],
+      [
+        "ctrl",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  "colorOffset": {
+    "item": [
+      [
+        "0",
+        "0x00ffffff"
+      ],
+      [
+        "0.06764325",
+        "0xffffffff"
+      ],
+      [
+        "1",
+        "0xffffffff"
+      ]
+    ]
+  }
+}

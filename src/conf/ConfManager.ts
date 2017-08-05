@@ -56,6 +56,18 @@ class ConfManager extends egret.EventDispatcher {
         return conf;
     }
 
+    // 把数组类型的配置以指定字段为key转换为hash并返回
+    public getHashConf(name: string,key: string) {
+        var hashConf = {}
+
+        var rawConf = this.getConf(name);
+        for ( let one of rawConf ) {
+            hashConf[one[key]] = one
+        }
+
+        return hashConf
+    }
+
     public getConf(name: string) {
         return this.confMap[name]
     }

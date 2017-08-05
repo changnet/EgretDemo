@@ -1,0 +1,133 @@
+{
+  "version": "1.1",
+  "type": "ParticleConfig",
+  "id": 0,
+  "property": {
+    "particleCount": 3.0,
+    "bounds": [
+      100000.0,
+      100000.0,
+      100000.0
+    ],
+    "colorType": "Const",
+    "colorConst1": "0xffffffff",
+    "gravity": 0.0,
+    "prewarm": false,
+    "playOnAwake": true,
+    "transform": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "render": {
+      "renderMode": "Billboard",
+      "cameraScale": 0.0,
+      "lengthScale": 0.0,
+      "speedScale": 0.0
+    },
+    "sortingFudge": "0"
+  },
+  "emission": {
+    "rate": 0.0,
+    "bursts": [],
+    "bezier": [
+      [
+        "pos",
+        "0",
+        "4.852942"
+      ],
+      [
+        "ctrl",
+        "0",
+        "4.852942"
+      ],
+      [
+        "pos",
+        "1",
+        "15"
+      ],
+      [
+        "ctrl",
+        "1",
+        "15"
+      ]
+    ],
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0
+  },
+  "life": {
+    "duration": 0.7,
+    "delay": 0.0,
+    "loop": false,
+    "type": "Const",
+    "max": 0.6,
+    "min": 0.6
+  },
+  "shape": {
+    "type": "Sphere",
+    "emitFromShell": true,
+    "randomDirection": false,
+    "sphereRadius": 1000.0
+  },
+  "rotationBirth": {
+    "type": "RandomConst",
+    "max": 360.0,
+    "min": 0.0
+  },
+  "scaleBirth": {
+    "type": "RandomConst",
+    "max": 1.2,
+    "min": 0.400000036
+  },
+  "geometry": {
+    "plane": [
+      100.0,
+      100.0
+    ]
+  },
+  "moveSpeed": {
+    "type": "Const",
+    "max": -600.0,
+    "min": -600.0
+  },
+  "scaleSize": {
+    "type": "OneBezier",
+    "max": 0.0,
+    "min": 0.0,
+    "bezier1": [
+      [
+        "pos",
+        "0",
+        "0"
+      ],
+      [
+        "ctrl",
+        "0.3333333",
+        "0.6666667"
+      ],
+      [
+        "pos",
+        "1",
+        "1"
+      ],
+      [
+        "ctrl",
+        "0.6666666",
+        "1"
+      ]
+    ]
+  }
+}
