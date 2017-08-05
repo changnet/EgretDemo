@@ -15,6 +15,9 @@
     {
       "name": "resourcemanager",
       "path": "3thlibs/resourcemanager"
+    },
+    {
+      "name": "egret3d"
     }
   ]
 }

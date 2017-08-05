@@ -25,6 +25,7 @@
 	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
 	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
 	<script egret="lib" src="3thlibs/resourcemanager/resourcemanager.js" src-release="3thlibs/resourcemanager/resourcemanager.min.js"></script>
+	<script egret="lib" src="libs/modules/egret3d/egret3d.js" src-release="libs/modules/egret3d/egret3d.min.js"></script>
 	<!--modules_files_end-->
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
@@ -34,9 +35,12 @@
 
     <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
     <!--game_files_start-->
-	<script egret="game" src="bin-debug/conf/ConfManager.js"></script>
-	<script egret="game" src="bin-debug/Main.js"></script>
 	<script egret="game" src="bin-debug/scene/SceneManager.js"></script>
+	<script egret="game" src="bin-debug/conf/ConfManager.js"></script>
+	<script egret="game" src="bin-debug/entity/Player.js"></script>
+	<script egret="game" src="bin-debug/Main.js"></script>
+	<script egret="game" src="bin-debug/scene/Scene.js"></script>
+	<script egret="game" src="bin-debug/entity/Entity.js"></script>
 	<script egret="game" src="bin-debug/ui/components/ProcessBar.js"></script>
 	<script egret="game" src="bin-debug/ui/LoadingPage.js"></script>
 	<script egret="game" src="bin-debug/ui/LoginPage.js"></script>
