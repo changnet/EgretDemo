@@ -13,7 +13,7 @@
         "json": "json",
         "fnt": "font",
         "pvr": "pvr",
-        "mp3": "sound"
+        "mp3": "sound",
     }
 
     var ext = path.substr(path.lastIndexOf(".") + 1);
@@ -29,6 +29,7 @@
         return typeMap[ext]
     }
 
+    // 这个游戏中的一些3D资源的加载，如e3dpack、nav等地图、动画、导航网格资源
     return "unit";
 })
 
@@ -37,7 +38,38 @@ class Main extends egret.DisplayObjectContainer {
     public constructor() {
         super();
 
+        this.registerResProcess();
         this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);
+    }
+
+    // 注册自定义类型的资源处理接口
+    private registerResProcess():void {
+        // resourcemanager的接口已定义好
+        // https://github.com/egret-labs/resourcemanager/blob/master/docs/README.md#processor
+
+        let promisify = (loader: egret3d.UnitLoader, url: string) => {
+            return new Promise((reslove, reject) => {
+                loader.addEventListener(egret3d.LoaderEvent3D.LOADER_COMPLETE, () => {
+                    reslove(loader.data);
+                }, this);
+                console.log("start load res",url)
+                loader.load("resource/" + url);
+
+
+            });
+        }
+
+        // RES.processor.map(type,object)
+        // object包含三个函数：onLoadStart、onRemoveStart、getData
+        RES.processor.map("unit", {
+
+            onLoadStart: async (host, resource) => {
+                var loader = new egret3d.UnitLoader();
+                return promisify(loader, resource.url)
+            },
+
+            onRemoveStart: async (host, resource) => Promise.resolve()
+        });
     }
 
     async preloadRes(){

@@ -72,6 +72,9 @@ class ConfManager extends egret.EventDispatcher {
     }
 
     public getConf(name: string) {
+        if (!this.confMap[name]) {
+            throw Error(`config file not found:${name}`)
+        }
         return this.confMap[name]
     }
 

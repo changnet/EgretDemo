@@ -1,25 +1,24 @@
 class SceneManager {
     private sceneConf: {[key:number]: any};
+    private currentScene: Scene;
 
     constructor() {
-        this.sceneConf = confManager.getHashConf("conf/map_scene.json","id");
-        console.log(this.sceneConf)
+        this.sceneConf = confManager.getHashConf("config/map_scene.json","id");
     }
 
     public enterScene(sceneID: number): void {
+        if (this.currentScene) {
+            throw Error("already in other scene")
+        }
+
         var oneSceneConf = this.sceneConf[sceneID]
         if ( !oneSceneConf ) {
             throw Error(`scene config not found:${sceneID}`);
         }
 
-        var assertId: number = oneSceneConf["assert_id"]
-        var resUrl: string[] = []
-
-        // 场景资源
-        // e3dpack是unity3d的格式，需要使用unity3d的工具来编辑和导出
-        // http://developer.egret.com/cn/github/egret-docs/Engine3D/unity/5/index.html
-        resUrl.push(`scene/${assertId}/Scene.e3dPack`)
-        resUrl.push(`scene/${assertId}/NavGrid.nav`)
+        var scene = new Scene(sceneID,oneSceneConf);
+        scene.loadScene();
+        this.currentScene = scene;
     }
 }
 
