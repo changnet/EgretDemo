@@ -52,10 +52,8 @@ class Main extends egret.DisplayObjectContainer {
                 loader.addEventListener(egret3d.LoaderEvent3D.LOADER_COMPLETE, () => {
                     reslove(loader.data);
                 }, this);
-                console.log("start load res",url)
+
                 loader.load("resource/" + url);
-
-
             });
         }
 
@@ -76,6 +74,7 @@ class Main extends egret.DisplayObjectContainer {
         // 进入协程
         try{
             await RES.loadConfig();  // 初始化res
+            await RES.getResAsync("ShadowPlane.png");
             await RES.getResAsync("ui/gameUI.json");
             await RES.getResAsync("ui/bg.jpg");
             await RES.getResAsync("ui/ui.png");
@@ -103,6 +102,22 @@ class Main extends egret.DisplayObjectContainer {
 
         // 注意，这个函数会进入协程
         this.preloadRes();
+
+        // 初始化3D参数 egret3d是一个单例
+        // 将舞台从2d转换为3d
+        // 没初始化会导致3d组件不可用，报Cannot read property 'STATIC_DRAW' of undefined
+        var stage3d = new egret3d.Stage3D(this.stage);
+        egret.setRendererContext(stage3d);
+        egret3d.Egret3DEngine.instance.useDevicePOLICY(0);
+        egret3d.Egret3DEngine.instance.debug = false;
+        egret3d.Egret3DPolicy.useAnimPoseInterpolation = true;
+        egret3d.Egret3DPolicy.useAnimMixInterpolation = true;
+        egret3d.Egret3DPolicy.useParticle = true;
+        egret3d.Egret3DPolicy.useLowLoop = true;
+
+        // 加上view3D后，要把index.html中的帧率改为60以上，不然屏幕闪烁严重
+        var view3d = new egret3d.View3D(0,0,stage3d.width,stage3d.height);
+        stage3d.addView3D(view3d);
     }
 
     public onResComplete(ev: ConfEvent) {

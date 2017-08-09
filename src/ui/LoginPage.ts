@@ -33,12 +33,18 @@ class LoginPage extends egret.DisplayObjectContainer {
         this.addChild(powerByEgret);
 
         this.enterGameButton.touchEnabled = true;
-        this.enterGameButton.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onButtonClick,this);
-
     }
 
     private onButtonClick(e: egret.TouchEvent): void {
         var roomPage = new RoomPage();
         uiManager.showPage(roomPage);
+    }
+
+    public onEnterPage():void {
+        this.enterGameButton.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onButtonClick,this);
+    }
+
+    public onLeavePage():void {
+        this.enterGameButton.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onButtonClick,this);
     }
 }

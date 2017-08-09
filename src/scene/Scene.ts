@@ -21,9 +21,11 @@ class Scene {
         // e3dpack是unity3d的格式，需要使用unity3d的工具来编辑和导出
         // http://developer.egret.com/cn/github/egret-docs/Engine3D/unity/5/index.html
         resUrl.push(`scene/${assetId}/Scene.e3dPack`);
-        //resUrl.push(`scene/${assetId}/NavGrid.nav`);
+        resUrl.push(`scene/${assetId}/NavGrid.nav`);
 
         // 怪物资源
+        var monIdMap: {[key: number]: boolean} = {} //防止重复加载
+        var resKeyMap: {[key: string]: boolean} = {}
         var monWave: number = this.sceneConf["monster_wave"];
         while (monWave) {
             let waveConf = Scene.monWaveMap[monWave];
@@ -32,12 +34,22 @@ class Scene {
             }
 
             for (let monId of waveConf["monster_id"]) {
+                if (monIdMap[monId]) {
+                    continue;
+                }
+
+                monIdMap[monId] = true;
                 let monConf = Scene.monMap[monId];
                 if (!monConf) {
                     throw Error(`monster config not found in scene(${this.sceneID}) wave(${monWave}) mon(${monId})`);
                 }
                 // 怪物动作
                 let monAsset = monConf["asset_id"];
+                if (resKeyMap[monAsset]) {
+                    continue;
+                }
+
+                resKeyMap[monAsset] = true;
                 resUrl.push(`anim/${monAsset}.e3dPack`);
                 // 怪物技能
             }
@@ -46,6 +58,7 @@ class Scene {
         }
 
         // 异步加载资源
+        // 这些资源url都没有加resource前缀，因为在RES.processor.map调用加载函数的时候，会加上前缀
         this.loadingPage = new LoadingPage(resUrl.length);
         uiManager.showPage(this.loadingPage);
 
@@ -55,7 +68,6 @@ class Scene {
     }
 
     private onOnceComplete(val: any,key: string) {
-        console.log(key)
         this.loadingPage.update();
     }
 

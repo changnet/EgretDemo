@@ -44,3 +44,7 @@
 * 下载第三方库,如[resourcemanager](https://github.com/egret-labs/resourcemanager)
 * 把下载的库文件(不需要ts文件，只需要.d.ts、js、js.map、min.js)到第三方目录，如3thlibs/resourcemanager
 * 在egretProperties.json中添加对应的模块名，指定path
+
+# egret3D
+* 需要在index.html把帧率改为60，不然加上View3D后屏幕闪烁严重
+* 加载3D资源需要初始化egret3d引擎，new egret3d.Stage3D(this.stage)，egret3d是单例模式，new一次后就可以了

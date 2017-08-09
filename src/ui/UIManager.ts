@@ -18,6 +18,14 @@ class UIManager {
     }
 
     showPage(page:Page) {
+        if (this.currentPage) {
+            if (this.currentPage.onLeavePage) {
+                this.currentPage.onLeavePage();
+            }
+            this.container.removeChild(this.currentPage);
+            this.currentPage = null;
+        }
+
         this.currentPage = page;
         this.container.addChild(page);
 

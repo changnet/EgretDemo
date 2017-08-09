@@ -15,7 +15,6 @@ class ConfManager extends egret.EventDispatcher {
 
     // 异步加载资源
     private static resource = [
-            "ShadowPlane.png",
             "config/equip_weapon.json",
             "config/map_scene.json",
             "config/map_wave.json",
