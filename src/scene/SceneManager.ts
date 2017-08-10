@@ -17,8 +17,14 @@ class SceneManager {
         }
 
         var scene = new Scene(sceneID,oneSceneConf);
-        scene.loadScene();
+        scene.loadScene(this.onLoadSceneDone,this);
         this.currentScene = scene;
+    }
+
+    private onLoadSceneDone():void {
+        this.currentScene.createScene();
+        uiManager.view.scene = this.currentScene;
+        console.log("enter scene done")
     }
 }
 

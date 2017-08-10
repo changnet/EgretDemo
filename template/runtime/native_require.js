@@ -13,13 +13,14 @@ var game_file_list = [
 	"bin-debug/entity/Monster.js",
 	"bin-debug/entity/Player.js",
 	"bin-debug/Main.js",
-	"bin-debug/conf/ConfManager.js",
+	"bin-debug/scene/NavGrid.js",
+	"bin-debug/ui/UIManager.js",
 	"bin-debug/scene/SceneManager.js",
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/LoadingPage.js",
 	"bin-debug/ui/LoginPage.js",
 	"bin-debug/ui/RoomPage.js",
-	"bin-debug/ui/UIManager.js",
+	"bin-debug/conf/ConfManager.js",
 	//----auto game_file_list end----
 ];
 

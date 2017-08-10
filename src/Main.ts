@@ -115,9 +115,13 @@ class Main extends egret.DisplayObjectContainer {
         egret3d.Egret3DPolicy.useParticle = true;
         egret3d.Egret3DPolicy.useLowLoop = true;
 
+        // View3D是Egre3D中的显示窗口，我们在View3D对象初始化的时候，需要填写的四个参数分别为窗口的x，y和宽高值。
+        // backColor是当前显示窗口的背景颜色。需要注意的是，其中颜色值为ARGB，不要忘记前两位为Alpha信息。
+        // 最后我们设置其当前View3D中摄像机的位置与朝向，并将其添加到egret3d.Egret3DCanvas对象中。
         // 加上view3D后，要把index.html中的帧率改为60以上，不然屏幕闪烁严重
         var view3d = new egret3d.View3D(0,0,stage3d.width,stage3d.height);
         stage3d.addView3D(view3d);
+        uiManager.view = view3d;
     }
 
     public onResComplete(ev: ConfEvent) {
