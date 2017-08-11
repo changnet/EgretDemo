@@ -24,7 +24,9 @@ class SceneManager {
     private onLoadSceneDone():void {
         this.currentScene.createScene();
         uiManager.view.scene = this.currentScene;
-        console.log("enter scene done")
+
+        var battlePage = new BattlePage();
+        uiManager.showPage(battlePage);
     }
 }
 

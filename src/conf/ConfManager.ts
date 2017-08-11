@@ -1,7 +1,8 @@
 class ConfEvent extends egret.Event {
     public static CONF_LOADED: string = "conf_loaded";
 
-    public constructor(type:string, bubbles:boolean = false, cancelable:boolean = false)
+    public constructor(
+        type:string, bubbles:boolean = false, cancelable:boolean = false)
     {
         super(type,bubbles,cancelable);
     }
