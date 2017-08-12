@@ -113,6 +113,8 @@ class SkillBar extends egret.Sprite {
     constructor(skillWidth: number = 64,skillHieght: number = 64) {
         super();
 
+        // 初始化技能栏高度，否则默认为0
+        this.height = skillHieght;
         // 设置每个技能的宽高
         this.skillWidth = skillWidth;
         this.skillHeight = skillHieght;
@@ -126,8 +128,12 @@ class SkillBar extends egret.Sprite {
 
         var idx = this.skillList.length;
         button.x = this.skillWidth*(idx - 1);
+
+        // 自动延长技能栏的长度
         this.width = this.skillWidth*idx;
         this.addChild(button);
+        // 保证左右居中
+        this.x = (this.parent.width - this.width)/2;
 
         button.id = idx
         button.addEventListener(

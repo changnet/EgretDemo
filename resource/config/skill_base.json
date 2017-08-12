@@ -1,0 +1,22 @@
+[
+    {
+        "id": 10000,
+        "icon": "skilla.png"
+    },
+    {
+        "id": 11000,
+        "icon": "skilla.png"
+    },
+    {
+        "id": 12000,
+        "icon": "skillb.png"
+    },
+    {
+        "id": 13000,
+        "icon": "skillc.png"
+    },
+    {
+        "id": 14000,
+        "icon": "skilld.png"
+    }
+]
