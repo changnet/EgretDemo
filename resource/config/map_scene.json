@@ -1,38 +1,38 @@
 [
     {
-        "monster_wave": 100000,
+        "asset_id": 100001,
+        "id": 100000,
         "min_map": "pic1",
-        "asset_id": 100001,
-        "id": 100000
+        "monster_wave": 100000
     },
     {
-        "monster_wave": 100000,
+        "asset_id": 100002,
+        "id": 100001,
         "min_map": "pic2",
-        "asset_id": 100002,
-        "id": 100001
+        "monster_wave": 100000
     },
     {
-        "monster_wave": 100000,
+        "asset_id": 100001,
+        "id": 100002,
         "min_map": "pic3",
-        "asset_id": 100001,
-        "id": 100002
+        "monster_wave": 100000
     },
     {
-        "monster_wave": 100000,
+        "asset_id": 100002,
+        "id": 100003,
         "min_map": "pic4",
-        "asset_id": 100002,
-        "id": 100003
+        "monster_wave": 100000
     },
     {
-        "monster_wave": 100000,
-        "min_map": "pic5",
         "asset_id": 100001,
-        "id": 100004
+        "id": 100004,
+        "min_map": "pic5",
+        "monster_wave": 100000
     },
     {
-        "monster_wave": 100000,
-        "min_map": "pic6",
         "asset_id": 100002,
-        "id": 100005
+        "id": 100005,
+        "min_map": "pic6",
+        "monster_wave": 100000
     }
 ]
