@@ -122,6 +122,11 @@ class Main extends egret.DisplayObjectContainer {
         var view3d = new egret3d.View3D(0,0,stage3d.width,stage3d.height);
         stage3d.addView3D(view3d);
         uiManager.view = view3d;
+
+        stage3d.addEventListener(egret3d.Event3D.ENTER_FRAME,
+            function (e: egret3d.Event3D) {
+                    gameMain.update(e.time,e.delay);
+            }, this);
     }
 
     public onResComplete(ev: ConfEvent) {
