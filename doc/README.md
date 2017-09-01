@@ -48,3 +48,9 @@
 # egret3D
 * 需要在index.html把帧率改为60，不然加上View3D后屏幕闪烁严重
 * 加载3D资源需要初始化egret3d引擎，new egret3d.Stage3D(this.stage)，egret3d是单例模式，new一次后就可以了
+
+
+
+    // 场景初始化在sceneManager.enterScene
+    // 主角初始化在logicManager.startGameRoom
+    // 塔和怪物也是通过addRole添加到场景

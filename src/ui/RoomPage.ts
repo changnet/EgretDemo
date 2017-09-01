@@ -123,13 +123,15 @@ class RoomPage extends egret.DisplayObjectContainer {
 
     public onEnterPage(): void {
         for ( let miniMap of this.mapList ) {
-            miniMap.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onMiniMapClick,this);
+            miniMap.addEventListener(
+                egret.TouchEvent.TOUCH_TAP,this.onMiniMapClick,this);
         }
     }
 
     public onLeavePage():void {
         for ( let miniMap of this.mapList ) {
-            miniMap.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onMiniMapClick,this);
+            miniMap.removeEventListener(
+                egret.TouchEvent.TOUCH_TAP,this.onMiniMapClick,this);
         }
     }
 }

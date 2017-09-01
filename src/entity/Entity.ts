@@ -1,4 +1,15 @@
-// 实体基类，包括npc、玩家、怪物、传送阵等需要显示的实体
-class Entity extends egret3d.Object3D {
-    private entityId: number; // 唯一实体id
+class Entity {
+    private _entityId: number;
+
+    constructor() {
+        this._entityId = 0;
+    }
+
+    set entityId(entityId: number) {
+        this._entityId = entityId;
+    }
+
+    get entityId(): number {
+        return this._entityId;
+    }
 }

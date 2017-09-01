@@ -1,4 +1,4 @@
-class Monster extends Animal {
+class MonsterView extends Animal {
 
     constructor() {
         super();
