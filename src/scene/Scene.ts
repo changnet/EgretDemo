@@ -119,4 +119,19 @@ class Scene extends egret3d.Scene3D {
         }
     }
 
+    // 主角进入场景
+    public addMainPlayer(mainPlayer:Player) {
+        var playerView = entityViewManager.createPlayerView(
+                    mainPlayer.entityId,mainPlayer.modelId);
+        this.addChild(playerView);
+
+        var pos_x = this.sceneConf["pos_x"];
+        var pos_y = this.sceneConf["pos_y"];
+        var pos_z = this.sceneConf["pos_z"];
+
+        playerView.x = pos_x;
+        playerView.z = pos_z;
+        sceneManager.lookAt(playerView);
+    }
+
 }

@@ -12,8 +12,6 @@ class UIManager {
     public static gameWidth  = 0;
     public static gameHeight = 0;
 
-    public view:egret3d.View3D;
-
     constructor(private container:egret.DisplayObjectContainer) {
         UIManager.gameWidth = container.stage.stageWidth
         UIManager.gameHeight = container.stage.stageHeight

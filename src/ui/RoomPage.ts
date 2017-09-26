@@ -113,11 +113,6 @@ class RoomPage extends egret.DisplayObjectContainer {
     private onMiniMapClick(e: egret.TouchEvent): void {
         var miniMap: MiniMap = e.target as MiniMap;
 
-        // change to map scene
-        if ( !sceneManager ) {
-            sceneManager = new SceneManager();
-        }
-
         sceneManager.enterScene(miniMap.sceneID);
     }
 

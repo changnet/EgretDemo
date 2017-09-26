@@ -121,7 +121,7 @@ class Main extends egret.DisplayObjectContainer {
         // 加上view3D后，要把index.html中的帧率改为60以上，不然屏幕闪烁严重
         var view3d = new egret3d.View3D(0,0,stage3d.width,stage3d.height);
         stage3d.addView3D(view3d);
-        uiManager.view = view3d;
+        sceneManager.view = view3d;
 
         stage3d.addEventListener(egret3d.Event3D.ENTER_FRAME,
             function (e: egret3d.Event3D) {
@@ -133,5 +133,6 @@ class Main extends egret.DisplayObjectContainer {
         // 加载完资源，显示login界面
         var loginPage = new LoginPage();
         uiManager.showPage(loginPage);
+        sceneManager.initConf();
     }
 }
