@@ -125,6 +125,8 @@ class Scene extends egret3d.Scene3D {
                     mainPlayer.entityId,mainPlayer.modelId);
         this.addChild(playerView);
 
+        playerView.play("Idle");
+
         var pos_x = this.sceneConf["pos_x"];
         var pos_y = this.sceneConf["pos_y"];
         var pos_z = this.sceneConf["pos_z"];

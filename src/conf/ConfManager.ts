@@ -20,7 +20,8 @@ class ConfManager extends egret.EventDispatcher {
             "config/map_scene.json",
             "config/map_wave.json",
             "config/map_monster.json",
-            "config/player_hero.json"
+            "config/player_hero.json",
+            "anim/js.e3dPack"
         ];
     
     constructor() {

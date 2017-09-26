@@ -15,12 +15,8 @@ class PlayerView extends AnimalView {
             throw Error(`player hero config not found:${modelId}`)
         }
 
+        // 创建一个egret3d用于显示的对象
         var assertId = conf["asset_id"];
-        var rawRole: egret3d.Role = RES.getRes(`anim/${assertId}.e3dPack`);
-        var role = rawRole ? rawRole.clone() : null;
-
-        if (role) {
-            this.addChild(role);
-        }
+        this.createRole(`anim/${assertId}.e3dPack`);
     }
 }
