@@ -116,6 +116,8 @@ class Scene extends egret3d.Scene3D {
             terrain.pickType = egret3d.PickType.PositionPick;
             terrain.enablePick = true; //设定这个物件是否具有 鼠标交互能力的开关
             this.terrainMesh = terrain;
+            terrain.addEventListener(
+                egret3d.PickEvent3D.PICK_UP, this.terrainPick, this);
         }
     }
 
@@ -134,6 +136,11 @@ class Scene extends egret3d.Scene3D {
         playerView.x = pos_x;
         playerView.z = pos_z;
         sceneManager.lookAt(playerView);
+    }
+
+    // 地图鼠标点击事件
+    private terrainPick(e: egret3d.PickEvent3D) {
+        // 处理主角移动
     }
 
 }
