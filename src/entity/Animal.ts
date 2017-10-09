@@ -5,4 +5,7 @@ class Animal extends Entity {
         this.pos.x = x;
         this.pos.z = z;
     }
+
+    public update(time: number, delay: number): void {
+    }
 }
