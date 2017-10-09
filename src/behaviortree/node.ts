@@ -12,7 +12,7 @@ namespace BehaviorTree {
     // 行为函数接口
     interface RunFunction {
         // https://www.typescriptlang.org/docs/handbook/interfaces.html
-        (): boolean;
+        (time: number,delay: number): Status;
     }
 
     // 行为对象接口
@@ -65,13 +65,13 @@ namespace BehaviorTree {
         }
 
         // 每帧调用
-        public run(): Status {
+        public run(time: number, delay: number): Status {
             if (!this.obj) {
                 console.log("BehaviorTree no run method found");
                 return Status.Failure;
             }
 
-            return this._status;
+            return this._status = this.obj["run"](time,delay);
         }
     }
 }

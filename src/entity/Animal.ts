@@ -1,11 +1,29 @@
 class Animal extends Entity {
-    protected pos: egret3d.Vector3D = new egret3d.Vector3D(); // 当前位置
+    private dest: egret3d.Vector3D;
+    protected behavior: BehaviorTree.Node;
 
-    setPos(x: number,z: number):void {
-        this.pos.x = x;
-        this.pos.z = z;
+    constructor() {
+        super();
+        this.dest = new egret3d.Vector3D();
+    }
+
+    public setBehavior(behavior: BehaviorTree.Node) {
+        this.behavior = behavior;
+    }
+
+    public moveTo(dest: egret3d.Vector3D) {
+        this.dest.copyFrom(dest);
+        var moveBehavior = new Behavior.Move(this,dest);
+
+        this.behavior = new BehaviorTree.Node(moveBehavior);
     }
 
     public update(time: number, delay: number): void {
+        if (this.behavior) {
+            var status = this.behavior.run(time,delay);
+            if (BehaviorTree.Status.Runing != status) {
+                this.behavior = null;
+            }
+        }
     }
 }

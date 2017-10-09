@@ -24,13 +24,13 @@ namespace BehaviorTree {
         }
 
         // 每帧回调
-        public run(): Status {
+        public run(time: number, delay: number): Status {
             if (this.status > Status.Runing) {
                 console.log("BehaviorTree sequence still run after exit");
                 return this.status
             }
 
-            
+
         }
     }
 }

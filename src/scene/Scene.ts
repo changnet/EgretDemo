@@ -141,6 +141,7 @@ class Scene extends egret3d.Scene3D {
     // 地图鼠标点击事件
     private terrainPick(e: egret3d.PickEvent3D) {
         // 处理主角移动
+        mainPlayer.moveTo(e.pickResult.globalPosition);
     }
 
 }
