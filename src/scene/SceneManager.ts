@@ -73,6 +73,11 @@ class SceneManager {
         this.cameraCtrl.target = target;
     }
 
+    // 获取当前的场景
+    public getCurrentScene() {
+        return this.currentScene;
+    }
+
     // 开始进入场景
     public enterScene(sceneID: number): void {
         if (this.currentScene) {

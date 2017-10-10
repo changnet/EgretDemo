@@ -6,6 +6,7 @@ class Scene extends egret3d.Scene3D {
     private loadingPage: LoadingPage;
 
     private terrainMesh: egret3d.Mesh;
+    private naviGrid: egret3d.NavGrid;
 
     constructor(id: number,sceneConf: any) {
         super();
@@ -108,8 +109,7 @@ class Scene extends egret3d.Scene3D {
 
         // 创建地形导航网格
         var navRes = RES.getRes(`scene/${assetId}/NavGrid.nav`);
-        var nav: egret3d.NavGrid = 
-            egret3d.NavGrid.createNavGridFromBuffer(navRes);
+        this.naviGrid = egret3d.NavGrid.createNavGridFromBuffer(navRes);
         var terrain: egret3d.Mesh =
             <egret3d.Mesh>sceneRes.findObject3D("TerrainCollider");
         if (terrain) {
@@ -136,6 +136,11 @@ class Scene extends egret3d.Scene3D {
         playerView.x = pos_x;
         playerView.z = pos_z;
         sceneManager.lookAt(playerView);
+    }
+
+    // 获取当前场景的导航数据
+    public getNaviGrid() {
+        return this.naviGrid;
     }
 
     // 地图鼠标点击事件
