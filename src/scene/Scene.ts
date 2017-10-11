@@ -129,6 +129,9 @@ class Scene extends egret3d.Scene3D {
 
         playerView.play("Idle");
 
+        // TODO: MVC写法是不应该绑定的
+        mainPlayer.setView(playerView);
+
         var pos_x = this.sceneConf["pos_x"];
         var pos_y = this.sceneConf["pos_y"];
         var pos_z = this.sceneConf["pos_z"];

@@ -13,7 +13,12 @@ enum EntityState {
 class Entity {
     private _entityId: number;
     private state: number[];
+    private view: EntityView; // 该实体对应的显示对象
     protected pos: egret3d.Vector3D = new egret3d.Vector3D(); // 当前位置
+
+    protected angle: number;     // 需要转向的角度
+    protected currAngle: number; // 当前的角度
+    protected angleSpeed: number; // 转向速度
 
     constructor() {
         this._entityId = 0;
@@ -27,6 +32,11 @@ class Entity {
         return this._entityId;
     }
 
+    // 帧更新
+    public update(time: number,delay: number) {
+
+    }
+
     // 设置当前位置，普通移动通常只设置两个坐标
     public setPos(x: number,z: number):void {
         this.pos.x = x;
@@ -36,5 +46,23 @@ class Entity {
     // 获取当前位置
     public getPos() {
         return this.pos;
+    }
+
+    // 设置view
+    public setView(view: EntityView) {
+        this.view = view;
+    }
+
+    // 获取view
+    public getView(): EntityView {
+        return this.view;
+    }
+
+    // 设置转向
+    // @x @z 是三维坐标中的x z
+    public trunDirection(x: number,z: number) {
+        // this.angle = EMathEx.normalizeAngle(Math.atan2(x, z) * egret3d.MathUtil.RADIANS_TO_DEGREES);
+        // this.currAngle = this.angle;
+        // this._rotNeedTime = this.rotTime;
     }
 }

@@ -16,10 +16,16 @@ namespace Behavior {
 
         public onEnter(): void {
             // 初始化移动路径
+            this.pathPoint = []
             var scene = sceneManager.getCurrentScene();
             var naviGrid = scene.getNaviGrid();
-
             naviGrid.findPath(this.entity.getPos(),this.dest,this.pathPoint);
+
+            // 播放移动动画
+            var view = this.entity.getView()
+            if (view) {
+                (<AnimalView>view).play("Run");
+            }
         }
 
         public run(time: number,delay: number): BehaviorTree.Status {
