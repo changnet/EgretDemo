@@ -19,6 +19,7 @@ class Animal extends Entity {
     }
 
     public update(time: number, delay: number): void {
+        super.update(time,delay);
         if (this.behavior) {
             var status = this.behavior.run(time,delay);
             if (BehaviorTree.Status.Runing != status) {

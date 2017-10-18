@@ -8,12 +8,12 @@ var game_file_list = [
 	"libs/modules/egret3d/egret3d.js",
 	"polyfill/promise.js",
 	"bin-debug/entity/Entity.js",
-	"bin-debug/entity/Animal.js",
-	"bin-debug/entity/Player.js",
 	"bin-debug/entityview/EntityView.js",
 	"bin-debug/behaviortree/node.js",
-	"bin-debug/entity/EntityManager.js",
 	"bin-debug/entityview/AnimalView.js",
+	"bin-debug/entity/Animal.js",
+	"bin-debug/entity/EntityManager.js",
+	"bin-debug/util/MathEx.js",
 	"bin-debug/entityview/EntityViewManager.js",
 	"bin-debug/conf/ConfManager.js",
 	"bin-debug/behavior/move.js",
@@ -22,7 +22,7 @@ var game_file_list = [
 	"bin-debug/behaviortree/random.js",
 	"bin-debug/behaviortree/repeat.js",
 	"bin-debug/behaviortree/sequence.js",
-	"bin-debug/behaviortree/condition.js",
+	"bin-debug/entity/Player.js",
 	"bin-debug/entityview/MonsterView.js",
 	"bin-debug/entityview/PlayerView.js",
 	"bin-debug/GameMain.js",
@@ -37,6 +37,7 @@ var game_file_list = [
 	"bin-debug/ui/LoginPage.js",
 	"bin-debug/ui/RoomPage.js",
 	"bin-debug/ui/UIManager.js",
+	"bin-debug/behaviortree/condition.js",
 	//----auto game_file_list end----
 ];
 
