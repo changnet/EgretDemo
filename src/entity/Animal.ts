@@ -1,10 +1,20 @@
 class Animal extends Entity {
-    private dest: egret3d.Vector3D;
+    protected speed: number;  // 移动速度 像素/毫秒
+    protected dest: egret3d.Vector3D; // 目的坐标
     protected behavior: BehaviorTree.Node;
 
     constructor() {
         super();
+        this.speed = 0.5; // 默认速度
         this.dest = new egret3d.Vector3D();
+    }
+
+    public getSpeed(): number {
+        return this.speed;
+    }
+
+    public setSpeed(speed: number) {
+        this.speed = speed;
     }
 
     public setBehavior(behavior: BehaviorTree.Node) {
@@ -24,6 +34,10 @@ class Animal extends Entity {
             var status = this.behavior.run(time,delay);
             if (BehaviorTree.Status.Runing != status) {
                 this.behavior = null;
+
+                if (this.view) {
+                    (<AnimalView>this.view).play("Idle");
+                }
             }
         }
     }
