@@ -39,7 +39,6 @@ namespace Behavior {
         // 移动一步
         private moveNextStep(src: egret3d.Vector3D,dest: egret3d.Vector3D) {
             // 计算所需要时间
-            console.log(src,dest,this.index)
             this.interval = 
                 egret3d.Vector3D.distance(src,dest)/this.entity.getSpeed();
 
@@ -64,27 +63,26 @@ namespace Behavior {
                 var x = this.direction.x*delay*speed;
                 var z = this.direction.z*delay*speed;
 
-                this.entity.setPos(x,z);
+                this.entity.setPosOffset(x,z);
                 return BehaviorTree.Status.Runing;
             }
-            else
-            {
-                // 走完了
-                if (this.index >= this.pathPoint.length - 1) {
-                    this.interval = 0
-                    this.entity.setPos(this.dest.x,this.dest.z);
 
-                    return BehaviorTree.Status.Success;
-                }
+            // 走完了
+            if (this.index >= this.pathPoint.length - 1) {
+                this.interval = 0
+                // TODO: 发现原例子中寻路出来的路线最后一个坐标不是终点，后面再看看
+                //this.entity.setPos(this.dest.x,this.dest.z);
 
-                // 走了不止一步
-                var interval = this.interval;
-                var src = this.pathPoint[this.index];
-                this.index ++;
-                this.moveNextStep(src,this.pathPoint[this.index]);
-
-                return this.run(time,delay - interval);
+                return BehaviorTree.Status.Success;
             }
+
+            // 走了不止一步
+            var interval = this.interval;
+            var src = this.pathPoint[this.index];
+            this.index ++;
+            this.moveNextStep(src,this.pathPoint[this.index]);
+
+            return this.run(time,delay - interval);
         }
     }
 }

@@ -19,7 +19,7 @@ class Entity {
     protected angle: number;     // 需要转向的角度
     protected currAngle: number; // 当前的角度
     private direction: number;   // 转动方向，-1是往二、三象限([0,-180])
-    static angleSpeed: number = 90/1000; // 转向速度 角度/毫秒
+    static angleSpeed: number = 900/1000; // 转向速度 角度/毫秒
 
     constructor() {
         this._entityId = 0;
@@ -54,6 +54,12 @@ class Entity {
         this.pos.z = z;
     }
 
+    // 偏移一定位置
+    public setPosOffset(x: number,z: number):void {
+        this.pos.x += x;
+        this.pos.z += z;
+    }
+
     // 获取当前位置
     public getPos() {
         return this.pos;
@@ -83,7 +89,12 @@ class Entity {
         // 计算需要转动的角度
         var deltaAngle = this.angle - this.currAngle
         // 转动方向，-1往左转[0,-180]，1往右转[0,180]
-        this.direction = deltaAngle > 0 ? 1 : -1;
+        if (Math.abs(deltaAngle) <= 180) {
+            this.direction = deltaAngle > 0 ? 1 : -1;
+        }
+        else {
+            this.direction = deltaAngle > 0 ? -1 : 1;
+        }
     }
 
     // 每帧更新转向,rotationY各个方向如下(三、四象限有正负两个数值，效果一样)：
