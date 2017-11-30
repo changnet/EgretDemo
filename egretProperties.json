@@ -18,6 +18,9 @@
     },
     {
       "name": "egret3d"
+    },
+    {
+      "name": "socket"
     }
   ]
 }

@@ -103,6 +103,8 @@ class Main extends egret.DisplayObjectContainer {
         // 注意，这个函数会进入协程
         this.preloadRes();
 
+        srvSocket.connect("echo.websocket.org", 80)
+
         // 初始化3D参数 egret3d是一个单例
         // 将舞台从2d转换为3d
         // 没初始化会导致3d组件不可用，报Cannot read property 'STATIC_DRAW' of undefined
