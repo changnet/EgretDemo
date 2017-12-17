@@ -20,6 +20,10 @@
       "name": "egret3d"
     },
     {
+      "name": "protobuf",
+      "path": "3thlibs/protobuf"
+    },
+    {
       "name": "socket"
     }
   ]

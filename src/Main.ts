@@ -136,5 +136,6 @@ class Main extends egret.DisplayObjectContainer {
         var loginPage = new LoginPage();
         uiManager.showPage(loginPage);
         sceneManager.initConf();
+        protobufManaer.loadConf();
     }
 }
