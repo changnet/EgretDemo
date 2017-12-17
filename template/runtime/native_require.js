@@ -25,7 +25,7 @@ var game_file_list = [
 	"bin-debug/behaviortree/parallel.js",
 	"bin-debug/behaviortree/priority.js",
 	"bin-debug/behaviortree/random.js",
-	"bin-debug/entity/Player.js",
+	"bin-debug/Main.js",
 	"bin-debug/entityview/MonsterView.js",
 	"bin-debug/entityview/PlayerView.js",
 	"bin-debug/network/commandDef.js",
@@ -41,7 +41,7 @@ var game_file_list = [
 	"bin-debug/ui/UIManager.js",
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/components/SkillBar.js",
-	"bin-debug/Main.js",
+	"bin-debug/entity/Player.js",
 	//----auto game_file_list end----
 ];
 

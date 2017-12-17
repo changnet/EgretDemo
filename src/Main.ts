@@ -34,7 +34,7 @@
 })
 
 class Main extends egret.DisplayObjectContainer {
-
+    private stage3d: egret3d.Egret3DCanvas;
     public constructor() {
         super();
 
@@ -125,10 +125,12 @@ class Main extends egret.DisplayObjectContainer {
         stage3d.addView3D(view3d);
         sceneManager.view = view3d;
 
-        stage3d.addEventListener(egret3d.Event3D.ENTER_FRAME,
-            function (e: egret3d.Event3D) {
-                    gameMain.update(e.time,e.delay);
-            }, this);
+        this.stage3d = stage3d
+        // 不能在这里addEventListener,3d的初始化应该是异步的，这里加的话导致未初始化完就回调
+        // stage3d.addEventListener(egret3d.Event3D.ENTER_FRAME,
+        //     function (e: egret3d.Event3D) {
+        //             gameMain.update(e.time,e.delay);
+        //     }, this);
     }
 
     public onResComplete(ev: ConfEvent) {
@@ -136,6 +138,11 @@ class Main extends egret.DisplayObjectContainer {
         var loginPage = new LoginPage();
         uiManager.showPage(loginPage);
         sceneManager.initConf();
-        protobufManaer.loadConf();
+        protobufManager.loadConf();
+
+        this.stage3d.addEventListener(egret3d.Event3D.ENTER_FRAME,
+            function (e: egret3d.Event3D) {
+                    gameMain.update(e.time,e.delay);
+            }, this);
     }
 }

@@ -14,7 +14,6 @@ const PLAYER = {
     ],
     srv_cmd: [
         { cmd:0x01,object: "SLogin" },
-        { 0x01:"aaa"}
     ]
 };
 

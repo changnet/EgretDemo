@@ -1,6 +1,7 @@
 class ProtoBufManager {
-    private loadCnt: Number = 0;
-    private cmdMap: {[key: string]: any} = {};
+    private loadCnt: number = 0;
+    private cltCmdMap: {[key: number]: protobuf.Type} = {};
+    private srvCmdMap: {[key: number]: protobuf.Type} = {};
 
     // 加载配置
     public loadConf(): void {
@@ -11,17 +12,6 @@ class ProtoBufManager {
         }
         // protobuf会自动通过http获取文件
         // 旧版本还可以用loadproto加载文件内容，新版本没找到对应的函数，因此就不用egret的resourceManager了
-        // protobuf.load("resource/proto/player.proto",function( err: Error,root: protobuf.Root ){
-        //     if ( err ) {
-        //         console.log("load proto file error");
-        //         throw err;
-        //     }
-        //     var messageType = root.lookupType("player.CLogin");
-        //     var message = messageType.create( {sid:1,time:2,plat:3,sign:"sign",account:"test"} );
-
-        //     var buffer = messageType.encode( message ).finish();
-
-        //     var newMessage = messageType.decode( buffer );
     }
 
     public onOneLoaded(err: Error,root: protobuf.Root,module: {[key:string]: any}): void {
@@ -29,21 +19,46 @@ class ProtoBufManager {
             throw err;
         }
 
-        console.log( module );
+        for ( let command of module["clt_cmd"] ) {
+            var cmd = module["module"] + command["cmd"];
+            var messageType = root.lookupType( `${module["package"]}.${command["object"]}`);
+
+            this.cltCmdMap[cmd] = messageType
+        }
+
+        for ( let command of module["srv_cmd"] ) {
+            var cmd = module["module"] + command["cmd"];
+            var messageType = root.lookupType( `${module["package"]}.${command["object"]}`);
+
+            this.srvCmdMap[cmd] = messageType
+        }
+
+        this.loadCnt ++;
     }
 
     // 把一个object编码成buffer
-    public encode(cmd: Number,pkt: {[key: string]: any}): Uint8Array
+    public encode(cmd: number,pkt: {[key: string]: any}): Uint8Array
     {
-        var buffer: Uint8Array;
-        return buffer;
+        if (!this.cltCmdMap[cmd])
+        {
+            throw `clt message config not found:${cmd}`
+        }
+        var messageType : protobuf.Type = this.cltCmdMap[cmd]
+        var message = messageType.create( pkt );
+
+        return messageType.encode(message).finish();
     }
 
     // 把buffer解码成object
-    public decode(cmd: Number,buffer: Uint8Array): {[key: string]: any}
+    public decode(cmd: number,buffer: Uint8Array): {[key: string]: any}
     {
-        return undefined;
+        if (!this.srvCmdMap[cmd])
+        {
+            throw `srv message config not found:${cmd}`
+        }
+        var messageType : protobuf.Type = this.srvCmdMap[cmd]
+        return messageType.decode(buffer);
     }
 }
 
-let protobufManaer = new ProtoBufManager();
+let protobufManager = new ProtoBufManager();
