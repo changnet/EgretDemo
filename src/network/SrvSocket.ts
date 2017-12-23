@@ -21,10 +21,16 @@ class SrvSocket {
     }
 
     private onRead( e:egret.Event ) {
-        console.log( "socket 22222222222222222" )
         var bytes = new egret.ByteArray();
         this.webSocket.readBytes(bytes);
-        console.log("收到数据：" + bytes.length);
+        var cmd = bytes.readShort();
+        var errno = bytes.readShort();
+        var buffer = new egret.ByteArray();
+        bytes.readBytes(buffer,0,0);
+
+        var pkt = protobufManager.decode(cmd,buffer.bytes);
+
+        console.log("收到数据：" + bytes.length,cmd,errno,pkt);
     }
 
     private onSocketOpen() : void {
@@ -43,8 +49,16 @@ class SrvSocket {
     }
 
     public send(cmd: number,pkt: {[key:string]: any}): void {
+        if (!this.isOpen) {
+            console.log( "send cmd with closed socket",cmd);
+            return;
+        }
         var buffer = protobufManager.encode( cmd,pkt )
-        var bytes = new egret.ByteArray( buffer )
+
+        var bytes = new egret.ByteArray()
+        bytes.writeShort(cmd);
+        // 不能直接写入uintAttry ？？？只有构造函数和private函数_writeUint8Array
+        bytes.writeBytes(new egret.ByteArray(buffer));
         this.webSocket.writeBytes( bytes )
         this.webSocket.flush();
     }

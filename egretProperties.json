@@ -24,6 +24,10 @@
       "path": "3thlibs/protobuf"
     },
     {
+      "name": "cryptojs",
+      "path": "3thlibs/cryptojs"
+    },
+    {
       "name": "socket"
     }
   ]

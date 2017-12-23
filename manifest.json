@@ -5,6 +5,7 @@
 		"3thlibs/resourcemanager/resourcemanager.js",
 		"libs/modules/egret3d/egret3d.js",
 		"3thlibs/protobuf/protobuf.js",
+		"3thlibs/cryptojs/cryptojs.js",
 		"libs/modules/socket/socket.js"
 	],
 	"game": [

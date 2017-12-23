@@ -1,0 +1,3 @@
+egret build
+
+pause

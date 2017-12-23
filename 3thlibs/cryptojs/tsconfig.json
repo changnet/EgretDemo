@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outFile": "dist/cryptojs.js",
+        "allowJs": true
+    },
+    "files": [
+        "./core.js",
+        "./md5.js"
+    ]
+}

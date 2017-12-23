@@ -20,3 +20,4 @@ const PLAYER = {
 const MODULES = [ PLAYER ];
 
 const CPLAYER_LOGIN = PLAYER.module + 0x01;
+const SPLAYER_LOGIN = PLAYER.module + 0x01;
