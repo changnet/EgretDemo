@@ -7,12 +7,14 @@ var game_file_list = [
 	"3thlibs/resourcemanager/resourcemanager.js",
 	"libs/modules/egret3d/egret3d.js",
 	"3thlibs/protobuf/protobuf.js",
+	"3thlibs/cryptojs/cryptojs.js",
 	"libs/modules/socket/socket.js",
 	"bin-debug/entity/Entity.js",
 	"bin-debug/entityview/EntityView.js",
 	"bin-debug/behaviortree/node.js",
 	"bin-debug/entityview/AnimalView.js",
 	"bin-debug/entity/Animal.js",
+	"bin-debug/entity/Player.js",
 	"bin-debug/entity/EntityManager.js",
 	"bin-debug/util/MathEx.js",
 	"bin-debug/entityview/EntityViewManager.js",
@@ -25,7 +27,6 @@ var game_file_list = [
 	"bin-debug/behaviortree/parallel.js",
 	"bin-debug/behaviortree/priority.js",
 	"bin-debug/behaviortree/random.js",
-	"bin-debug/Main.js",
 	"bin-debug/entityview/MonsterView.js",
 	"bin-debug/entityview/PlayerView.js",
 	"bin-debug/network/commandDef.js",
@@ -41,7 +42,7 @@ var game_file_list = [
 	"bin-debug/ui/UIManager.js",
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/components/SkillBar.js",
-	"bin-debug/entity/Player.js",
+	"bin-debug/Main.js",
 	//----auto game_file_list end----
 ];
 

@@ -36,8 +36,8 @@ class LoginPage extends egret.DisplayObjectContainer {
     }
 
     private onButtonClick(e: egret.TouchEvent): void {
-        //var roomPage = new RoomPage();
-        //uiManager.showPage(roomPage);
+        var roomPage = new RoomPage();
+        uiManager.showPage(roomPage);
 
         var LOGIN_KEY = "409065b7570155637b95e38ca13542e0";
         var sign = CryptoJS.MD5(LOGIN_KEY + "2" + "bbb").toString();

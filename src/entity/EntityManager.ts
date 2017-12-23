@@ -1,3 +1,4 @@
+///<reference path="Player.ts" />
 class EntityManager {
     private entityIdSeed: number;
     private entityMap: {[key:number]: Entity} = {}

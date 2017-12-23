@@ -49,7 +49,9 @@
 * 需要在index.html把帧率改为60，不然加上View3D后屏幕闪烁严重
 * 加载3D资源需要初始化egret3d引擎，new egret3d.Stage3D(this.stage)，egret3d是单例模式，new一次后就可以了
 
-
+# egret文件加载顺序
+* http://edn.egret.com/cn/article/index/id/892
+* egret编译时，并不能准确识别各个ts文件的依赖关系，这时就要在文件加上要依赖的文件。如：///<reference path="TestA.ts" />
 
     // 场景初始化在sceneManager.enterScene
     // 主角初始化在logicManager.startGameRoom
