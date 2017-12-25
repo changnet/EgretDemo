@@ -34,11 +34,18 @@
 })
 
 class Main extends egret.DisplayObjectContainer {
+    private isThemeLoadEnd: boolean = false;
     public constructor() {
         super();
 
         this.registerResProcess();
         this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);
+
+        //inject the custom material parser
+        //注入自定义的素材解析器
+        let assetAdapter = new AssetAdapter();
+        egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
+        egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
     }
 
     // 注册自定义类型的资源处理接口
@@ -136,5 +143,17 @@ class Main extends egret.DisplayObjectContainer {
         uiManager.showPage(loginPage);
         sceneManager.initConf();
         protobufManager.loadConf();
+
+        //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
+        let theme = new eui.Theme("resource/default.thm.json", this.stage);
+        theme.addEventListener(eui.UIEvent.COMPLETE, this.onThemeLoadComplete, this);
+    }
+
+    /**
+     * 主题文件加载完成,开始预加载
+     * Loading of theme configuration file is complete, start to pre-load the 
+     */
+    private onThemeLoadComplete(): void {
+        this.isThemeLoadEnd = true;
     }
 }

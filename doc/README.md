@@ -53,6 +53,10 @@
 * http://edn.egret.com/cn/article/index/id/892
 * egret编译时，并不能准确识别各个ts文件的依赖关系，这时就要在文件加上要依赖的文件。如：///<reference path="TestA.ts" />
 
+# deefault.thm.json
+* http://developer.egret.com/cn/github/egret-docs/extension/EUI/skin/theme/index.html
+* http://www.cnblogs.com/gamedaybyday/p/6245611.html
+
     // 场景初始化在sceneManager.enterScene
     // 主角初始化在logicManager.startGameRoom
     // 塔和怪物也是通过addRole添加到场景

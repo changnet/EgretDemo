@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AccountSkin" width="492" height="328" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:TextInput id="host" width="200" height="20" x="142" y="73"/>
+	<e:TextInput id="port" width="80" height="20" x="367" y="73"/>
+	<e:Label id="server_lab" text="服务器：" x="22" y="68"/>
+	<e:TextInput id="account" width="310" height="20" x="146" y="134" anchorOffsetX="0" enabled="true"/>
+	<e:Label id="account_lab" text="帐  号：" x="22" y="131" anchorOffsetX="0" width="120"/>
+</e:Skin>

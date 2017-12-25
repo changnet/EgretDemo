@@ -1,0 +1,7 @@
+{
+  "skins": {},
+  "autoGenerateExmlsList": true,
+  "exmls": [
+    "resource/eui_exmls/AccountSkin.exml"
+  ]
+}
