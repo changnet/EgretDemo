@@ -42,7 +42,7 @@ class LoginPage extends egret.DisplayObjectContainer {
         var LOGIN_KEY = "409065b7570155637b95e38ca13542e0";
         var sign = CryptoJS.MD5(LOGIN_KEY + "2" + "bbb").toString();
         console.log( "md5 result", sign );
-        srvSocket.send(CPLAYER_LOGIN,{sid:1,time:2,plat:3,sign:sign,account:"bbb"});
+        srvSocket.send(CPLAYER_LOGIN,{sid:1,time:2,plat:999,sign:sign,account:"bbb"});
     }
 
     public onEnterPage():void {

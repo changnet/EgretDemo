@@ -30,7 +30,7 @@ class SrvSocket {
 
         var pkt = protobufManager.decode(cmd,buffer.bytes);
 
-        console.log("收到数据：" + bytes.length,cmd,errno,pkt);
+        console.log("收到数据：" + bytes.length,cmd,errno,pkt["pid"],pkt["name"]);
     }
 
     private onSocketOpen() : void {

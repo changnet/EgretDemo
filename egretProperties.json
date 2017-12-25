@@ -20,6 +20,9 @@
       "name": "egret3d"
     },
     {
+      "name": "eui"
+    },
+    {
       "name": "protobuf",
       "path": "3thlibs/protobuf"
     },
