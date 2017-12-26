@@ -8,6 +8,15 @@
     "path": "bin-release"
   },
   "egret_version": "5.0.14",
+  "eui": {
+    "exmlRoot": [
+      "resource/eui_skins"
+    ],
+    "themes": [
+      "resource/default.thm.json"
+    ],
+    "exmlPublishPolicy": "content"
+  },
   "modules": [
     {
       "name": "egret"

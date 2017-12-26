@@ -56,6 +56,8 @@
 # deefault.thm.json
 * http://developer.egret.com/cn/github/egret-docs/extension/EUI/skin/theme/index.html
 * http://www.cnblogs.com/gamedaybyday/p/6245611.html
+* 需要在gretProperties.json中配置eui的路径才会自动编译此文件
+* 控件皮肤是要有的，不然使用控件时显示不出来
 
     // 场景初始化在sceneManager.enterScene
     // 主角初始化在logicManager.startGameRoom

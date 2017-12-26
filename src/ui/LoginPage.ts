@@ -1,9 +1,10 @@
-class LoginPage extends egret.DisplayObjectContainer {
+class LoginPage extends eui.Component {
     private enterGameButton: egret.Bitmap;
 
     constructor() {
         super();
-        this.once(egret.Event.ADDED_TO_STAGE,this.onAdd,this);
+        this.skinName = "resource/eui_exmls/LoginPageSkin.exml";
+        //this.once(egret.Event.ADDED_TO_STAGE,this.onAdd,this);
     }
 
     private onAdd() {
