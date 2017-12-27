@@ -1,44 +1,37 @@
 class LoginPage extends eui.Component {
-    private enterGameButton: egret.Bitmap;
+    public loginBtn: eui.Button;
+    public hostEdit: eui.TextInput;
+    public portEdit: eui.TextInput;
+    public accEdit : eui.TextInput;
 
     constructor() {
         super();
+
+        this.addEventListener(eui.UIEvent.COMPLETE,this.onComplete,this);
         this.skinName = "resource/eui_exmls/LoginPageSkin.exml";
-        this.once(egret.Event.ADDED_TO_STAGE,this.onAdd,this);
     }
 
-    private onAdd() {
-        var wid = UIManager.gameWidth;
-        var hei = UIManager.gameHeight;
+    // 覆盖基类，在创建控件时调用
+    protected createChildren() {
+        super.createChildren();
+    }
 
-        var bgImage = new egret.Bitmap();
-        bgImage.texture = RES.getRes("ui/bg.jpg");
-        this.addChild(bgImage);
-
-        var gameName = new egret.Bitmap();
-        gameName.texture = RES.getRes("ui/ui.json#logo");
-        gameName.x = wid*0.5 - gameName.width*0.5; // 左右居中
-        gameName.y = hei*0.5 - gameName.height*0.5 - gameName.height;
-        this.addChild(gameName);
-
-        var newGameBut = this.enterGameButton = new egret.Bitmap();
-        newGameBut.texture = RES.getRes("ui/ui.json#menu")
-        newGameBut.x = wid*0.5 - newGameBut.width*0.5;
-        newGameBut.y = gameName.y + gameName.height + 220;
-        this.addChild(newGameBut);
-
-        var powerByEgret = new egret.Bitmap();
-        powerByEgret.texture = RES.getRes("ui/gameUI.json#powerByEgert3D.png");
-        powerByEgret.x = bgImage.width - powerByEgret.width;
-        powerByEgret.y = this.stage.stageHeight - powerByEgret.height;
-        this.addChild(powerByEgret);
-
-        this.enterGameButton.touchEnabled = true;
+    // 覆盖基类，在控件创建完成时调用
+    protected childrenCreated() {
+        super.childrenCreated();
+    }
+    // 加载完皮肤时调用
+    private onComplete():void{
+        // 注意：在createChildren和childrenCreated中，如果没有预先加载exml文件，是不会创建控件
+        // 要等eui.UIEvent.COMPLETE事件才会创建控件
+        // 控件匹配规则是根据名字：http://edn.egret.com/cn/docs/page/509
+        this.loginBtn.touchEnabled = true;
+        this.loginBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onButtonClick,this);
     }
 
     private onButtonClick(e: egret.TouchEvent): void {
-        var roomPage = new RoomPage();
-        uiManager.showPage(roomPage);
+        // var roomPage = new RoomPage();
+        // uiManager.showPage(roomPage);
 
         var LOGIN_KEY = "409065b7570155637b95e38ca13542e0";
         var sign = CryptoJS.MD5(LOGIN_KEY + "2" + "bbb").toString();
@@ -46,11 +39,7 @@ class LoginPage extends eui.Component {
         srvSocket.send(CPLAYER_LOGIN,{sid:1,time:2,plat:999,sign:sign,account:"bbb"});
     }
 
-    public onEnterPage():void {
-        this.enterGameButton.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onButtonClick,this);
-    }
-
     public onLeavePage():void {
-        this.enterGameButton.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onButtonClick,this);
+        this.loginBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onButtonClick,this);
     }
 }

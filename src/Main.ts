@@ -91,8 +91,8 @@ private isResourceLoadEnd: boolean = false;
         uiManager.showPage(loginPage);
 
         // 在玩家输入帐号时，加载其他配置
-        sceneManager.initConf();
-        protobufManager.loadConf();
+        // sceneManager.initConf();
+        // protobufManager.loadConf();
     }
     /**
      * 资源组加载出错

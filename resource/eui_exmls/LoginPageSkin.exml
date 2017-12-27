@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="LoginPageSkin" width="492" height="328" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="LoginPageSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="16091ddc228"/>
-	<e:TextInput id="host" width="200" height="20" x="142" y="73"/>
-	<e:TextInput id="port" width="80" height="20" x="367" y="73"/>
-	<e:Label id="server_lab" text="服务器：" x="22" y="68"/>
-	<e:TextInput id="account" width="310" height="20" x="146" y="134" anchorOffsetX="0" enabled="true"/>
-	<e:Label id="account_lab" text="帐  号：" x="22" y="131" anchorOffsetX="0" width="120"/>
+	<e:Image id="bgImage" width="640" height="1136" x="0" y="0" source="bg_jpg"/>
+
+
+
+
+	<e:Group width="555" height="214" x="42.5" y="354" anchorOffsetX="0" anchorOffsetY="0">
+		<e:TextInput id="hostEdit" width="200" height="30" x="150" y="38" text="127.0.0.1"/>
+		<e:TextInput id="portEdit" width="80" height="30" x="365" y="38" text="10002"/>
+		<e:Label id="srvLabel" text="服务器：" x="11" y="38"/>
+		<e:TextInput id="accEdit" width="310" height="30" x="150" y="92" anchorOffsetX="0" enabled="true" text="changnet"/>
+		<e:Label id="accLabel" text="帐   号：" x="11" y="92" anchorOffsetX="0" width="120"/>
+	</e:Group>
+	<e:Image id="powerImage" source="gameUI_json.powerByEgert3D.png" x="236" y="1072"/>
+	<e:Image id="logoImage" source="ui_json.logo" x="54" y="90"/>
+	<e:Button id="loginBtn" label="" x="176" y="639">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="ui_json.menu" source.down="ui_json.menu"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
 </e:Skin>
