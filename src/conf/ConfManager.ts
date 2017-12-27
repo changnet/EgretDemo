@@ -30,8 +30,8 @@ class ConfManager extends egret.EventDispatcher {
 
     async preloadRes(){
         // 上面加载完loading界面所需要的资源后，显示loading界面并加载游戏的其他资源
-        this.loadingPage = new LoadingPage(ConfManager.resource.length);
-        uiManager.showPage(this.loadingPage);
+        //this.loadingPage = new LoadingPage(ConfManager.resource.length);
+        //uiManager.showPage(this.loadingPage);
 
         this.startLoad();
     }

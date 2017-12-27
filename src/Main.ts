@@ -1,97 +1,28 @@
-// 用装饰器语法装饰resourcemanager的mapConfig函数
-// 此函数似乎同时用于res build命令(https://github.com/egret-labs/resourcemanager/tree/master/docs)
-// 存在一个全局唯一的资源配置文件，并通过 res build 命令自动生成，生成的文件名为RES.mapConfig的第一个参数所对应的文件名
-// 每当资源文件发生变化时，需要重新执行res build
-// 当 res build 命令执行后，会遍历 resource文件夹，并将其中的每一个文件执行 RES.mapConfig的第三个参数所指向的函数，如果该
-// 文件返回 undefined ，则此文件不会被加入到资源配置文件中。
-
-@RES.mapConfig("default.res.json", () => "resource", path => {
-    var typeMap = {
-        "jpg": "image",
-        "png": "image",
-        "webp": "image",
-        "json": "json",
-        "fnt": "font",
-        "pvr": "pvr",
-        "mp3": "sound",
-    }
-
-    var ext = path.substr(path.lastIndexOf(".") + 1);
-
-    // 在ui目录下，一个合并后的png素材由一张png图片和一个json文件组成。
-    // 这个json必须解析为egret.SpriteSheet对象才能通过RES.getRes("ui/ui.json#title");这种方式获取资源
-    if (path.indexOf("ui/") >= 0) {
-        if ("json" == ext) {
-            return "sheet"
-        }
-    }
-    if (ext in typeMap) {
-        return typeMap[ext]
-    }
-
-    // 这个游戏中的一些3D资源的加载，如e3dpack、nav等地图、动画、导航网格资源
-    return "unit";
-})
 
 class Main extends egret.DisplayObjectContainer {
     private isThemeLoadEnd: boolean = false;
     public constructor() {
         super();
 
-        this.registerResProcess();
         this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);
-
-        //inject the custom material parser
-        //注入自定义的素材解析器
-        let assetAdapter = new AssetAdapter();
-        egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
-        egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
     }
 
-    // 注册自定义类型的资源处理接口
-    private registerResProcess():void {
-        // resourcemanager的接口已定义好
-        // https://github.com/egret-labs/resourcemanager/blob/master/docs/README.md#processor
+    async loadPreConf() {
+        // 初始化Resource资源加载库，即加载default.res.json这个文件
+        // 这个文件必须包含alias字段，这个字段在egret wing中编辑资源时不会自动生成
+        await RES.loadConfig("resource/default.res.json","resource/"); // await 相当于协程
+        
+        //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
+        //加载default.thm.json这个文件及文件中包含的exmls文件
+        let theme = new eui.Theme("resource/default.thm.json", this.stage);
+        theme.addEventListener(eui.UIEvent.COMPLETE, this.onThemeLoadComplete, this);
 
-        let promisify = (loader: egret3d.UnitLoader, url: string) => {
-            return new Promise((reslove, reject) => {
-                loader.addEventListener(egret3d.LoaderEvent3D.LOADER_COMPLETE, () => {
-                    reslove(loader.data);
-                }, this);
-
-                loader.load("resource/" + url);
-            });
-        }
-
-        // RES.processor.map(type,object)
-        // object包含三个函数：onLoadStart、onRemoveStart、getData
-        RES.processor.map("unit", {
-
-            onLoadStart: async (host, resource) => {
-                var loader = new egret3d.UnitLoader();
-                return promisify(loader, resource.url)
-            },
-
-            onRemoveStart: async (host, resource) => Promise.resolve()
-        });
-    }
-
-    async preloadRes(){
-        // 进入协程
-        try{
-            await RES.loadConfig();  // 初始化res
-            await RES.getResAsync("ShadowPlane.png");
-            await RES.getResAsync("ui/gameUI.json");
-            await RES.getResAsync("ui/bg.jpg");
-            await RES.getResAsync("ui/ui.png");
-            await RES.getResAsync("ui/ui.json")
-        }
-        catch(e){
-            console.error(e);
-        }
-
-        // 退出协程
-        confManager.preloadRes();
+        // 加载基本的配置资源
+        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
+        RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
+        RES.loadGroup("preload");
     }
 
     public onAddToStage(){
@@ -102,14 +33,14 @@ class Main extends egret.DisplayObjectContainer {
             this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
         }
 
+        //注入自定义的素材解析器
+        egret.registerImplementation("eui.IAssetAdapter", new AssetAdapter());
+        egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
+
+        this.loadPreConf();
+
         uiManager = new UIManager(this);
         confManager = new ConfManager();
-        confManager.addEventListener(ConfEvent.CONF_LOADED,this.onResComplete,this);
-
-        // 注意，这个函数会进入协程
-        this.preloadRes();
-
-        srvSocket.connect("127.0.0.1",10002);
 
         // 初始化3D参数 egret3d是一个单例
         // 将舞台从2d转换为3d
@@ -137,16 +68,55 @@ class Main extends egret.DisplayObjectContainer {
             }, this);
     }
 
-    public onResComplete(ev: ConfEvent) {
+private isResourceLoadEnd: boolean = false;
+    /**
+     * preload资源组加载完成
+     * preload resource group is loaded
+     */
+    private onResourceLoadComplete(event: RES.ResourceEvent): void {
+        RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
+        RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
+        RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
+        RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
+        this.isResourceLoadEnd = true;
+        this.createScene();
+    }
+    private createScene() {
+        if (!this.isThemeLoadEnd || !this.isResourceLoadEnd) {
+            return;
+        }
+
         // 加载完资源，显示login界面
         var loginPage = new LoginPage();
         uiManager.showPage(loginPage);
+
+        // 在玩家输入帐号时，加载其他配置
         sceneManager.initConf();
         protobufManager.loadConf();
-
-        //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-        let theme = new eui.Theme("resource/default.thm.json", this.stage);
-        theme.addEventListener(eui.UIEvent.COMPLETE, this.onThemeLoadComplete, this);
+    }
+    /**
+     * 资源组加载出错
+     *  The resource group loading failed
+     */
+    private onItemLoadError(event: RES.ResourceEvent): void {
+        console.warn("Url:" + event.resItem.url + " has failed to load");
+    }
+    /**
+     * 资源组加载出错
+     * Resource group loading failed
+     */
+    private onResourceLoadError(event: RES.ResourceEvent): void {
+        //TODO
+        console.warn("Group:" + event.groupName + " has failed to load");
+        //忽略加载失败的项目
+        //ignore loading failed projects
+        this.onResourceLoadComplete(event);
+    }
+    /**
+     * preload资源组加载进度
+     * loading process of preload resource
+     */
+    private onResourceProgress(event: RES.ResourceEvent): void {
     }
 
     /**
@@ -155,5 +125,6 @@ class Main extends egret.DisplayObjectContainer {
      */
     private onThemeLoadComplete(): void {
         this.isThemeLoadEnd = true;
+        this.createScene();
     }
 }

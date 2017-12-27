@@ -3,6 +3,7 @@ My game demo for learning egret. Base on egret demo(http://developer.egret.com/c
 
 # Note
 
+* 使用res而不是resourcemanager，因resourcemanager与eui冲突，且resourcemanager不支持egret wing生成的default.res.json格式
 * 函数主入口在Main.ts，通用事件ADDED_TO_STAGE调用onAddToStage
 * js的"原型链"（prototype chain）模式，来实现继承
 * js的装饰器 ???

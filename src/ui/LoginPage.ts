@@ -4,7 +4,7 @@ class LoginPage extends eui.Component {
     constructor() {
         super();
         this.skinName = "resource/eui_exmls/LoginPageSkin.exml";
-        //this.once(egret.Event.ADDED_TO_STAGE,this.onAdd,this);
+        this.once(egret.Event.ADDED_TO_STAGE,this.onAdd,this);
     }
 
     private onAdd() {

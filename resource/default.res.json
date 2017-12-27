@@ -1,329 +1,147 @@
 {
-	"alias": {},
-	"groups": {},
-	"resources": {
-		"ShadowPlane.png": "ShadowPlane.png",
-		"ui": {
-			"gameUI.json": "ui/gameUI.json",
-			"gameUI.png": "ui/gameUI.png",
-			"bg.jpg":"ui/bg.jpg",
-			"ui.json": "ui/ui.json",
-			"ui.png": "ui/ui.png"
-		},
-		"config": {
-			"equip_weapon.json": "config/equip_weapon.json",
-			"map_scene.json": "config/map_scene.json",
-			"map_monster.json": "config/map_monster.json",
-			"map_wave.json": "config/map_wave.json",
-			"player_hero.json": "config/player_hero.json"
-		},
-		"scene": {
-			"100001": {
-				"Scene": {
-					"Terrain": {
-						"Alphamap_0.png": "scene/100001/Scene/Terrain/Alphamap_0.png",
-						"Detail_texture_0.png": "scene/100001/Scene/Terrain/Detail_texture_0.png",
-						"Detailmap_0.jpg": "scene/100001/Scene/Terrain/Detailmap_0.jpg",
-						"Heightmap_0.jpg": "scene/100001/Scene/Terrain/Heightmap_0.jpg",
-						"SplatPrototype_normalMapPath_1.jpg": "scene/100001/Scene/Terrain/SplatPrototype_normalMapPath_1.jpg",
-						"SplatPrototype_texture_0.jpg": "scene/100001/Scene/Terrain/SplatPrototype_texture_0.jpg",
-						"SplatPrototype_texture_1.jpg": "scene/100001/Scene/Terrain/SplatPrototype_texture_1.jpg"
-					},
-					"Texture": {
-						"LightmapFar-0.png": "scene/100001/Scene/Texture/LightmapFar-0.png",
-						"LightmapFar-1.png": "scene/100001/Scene/Texture/LightmapFar-1.png",
-						"LightmapFar-2.png": "scene/100001/Scene/Texture/LightmapFar-2.png",
-						"Rocks_winter.png": "scene/100001/Scene/Texture/Rocks_winter.png",
-						"Stone_elements_Winter.png": "scene/100001/Scene/Texture/Stone_elements_Winter.png",
-						"Tow_Crystals.png": "scene/100001/Scene/Texture/Tow_Crystals.png",
-						"Tree_bark_winter.png": "scene/100001/Scene/Texture/Tree_bark_winter.png",
-						"Tree_leaves_winter.png": "scene/100001/Scene/Texture/Tree_leaves_winter.png",
-						"tower_base2_winter.png": "scene/100001/Scene/Texture/tower_base2_winter.png"
-					},
-					"EffectGroup": {
-						"Fx_Portals_01": {
-							"Texture": {
-								"Fx_Glow_04.png": "scene/100001/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Glow_04.png",
-								"Fx_Ray_05.png": "scene/100001/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Ray_05.png",
-								"Fx_Ray_06.png": "scene/100001/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Ray_06.png",
-								"Fx_Smoke_01.png": "scene/100001/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Smoke_01.png"
-							}
-						},
-						"Fx_TowerExplode_01": {
-							"Texture": {
-								"Fx_Dash_03.png": "scene/100001/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Dash_03.png",
-								"Fx_Flash_04.png": "scene/100001/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Flash_04.png",
-								"Fx_Glow_01.png": "scene/100001/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Glow_01.png",
-								"Fx_Glow_03.png": "scene/100001/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Glow_03.png",
-								"Fx_Ray_01.png": "scene/100001/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Ray_01.png"
-							}
-						}
-					}
-				},
-				"NavGrid.nav": "scene/100001/NavGrid.nav",
-				"Scene.e3dPack": "scene/100001/Scene.e3dPack",
-				"Scene.e3dPackc": "scene/100001/Scene.e3dPackc"
-			},
-			"100002": {
-				"Scene": {
-					"Terrain": {
-						"Alphamap_141.png": "scene/100002/Scene/Terrain/Alphamap_141.png",
-						"Detail_texture_0.png": "scene/100002/Scene/Terrain/Detail_texture_0.png",
-						"Detailmap_0.jpg": "scene/100002/Scene/Terrain/Detailmap_0.jpg",
-						"Heightmap_141.jpg": "scene/100002/Scene/Terrain/Heightmap_141.jpg",
-						"SplatPrototype_normalMapPath_1.jpg": "scene/100002/Scene/Terrain/SplatPrototype_normalMapPath_1.jpg",
-						"SplatPrototype_texture_0.jpg": "scene/100002/Scene/Terrain/SplatPrototype_texture_0.jpg",
-						"SplatPrototype_texture_1.jpg": "scene/100002/Scene/Terrain/SplatPrototype_texture_1.jpg"
-					},
-					"Texture": {
-						"LightmapFar-0.png": "scene/100002/Scene/Texture/LightmapFar-0.png",
-						"LightmapFar-1.png": "scene/100002/Scene/Texture/LightmapFar-1.png",
-						"LightmapFar-2.png": "scene/100002/Scene/Texture/LightmapFar-2.png",
-						"Rocks.png": "scene/100002/Scene/Texture/Rocks.png",
-						"Stone_elements.png": "scene/100002/Scene/Texture/Stone_elements.png",
-						"Tow_Crystals.png": "scene/100002/Scene/Texture/Tow_Crystals.png",
-						"Tree_bark.png": "scene/100002/Scene/Texture/Tree_bark.png",
-						"Tree_leaves.png": "scene/100002/Scene/Texture/Tree_leaves.png",
-						"tower_base2.png": "scene/100002/Scene/Texture/tower_base2.png"
-					},
-					"EffectGroup": {
-						"Fx_Portals_01": {
-							"Texture": {
-								"Fx_Glow_04.png": "scene/100002/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Glow_04.png",
-								"Fx_Ray_05.png": "scene/100002/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Ray_05.png",
-								"Fx_Ray_06.png": "scene/100002/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Ray_06.png",
-								"Fx_Smoke_01.png": "scene/100002/Scene/EffectGroup/Fx_Portals_01/Texture/Fx_Smoke_01.png"
-							}
-						},
-						"Fx_TowerExplode_01": {
-							"Texture": {
-								"Fx_Dash_03.png": "scene/100002/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Dash_03.png",
-								"Fx_Flash_04.png": "scene/100002/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Flash_04.png",
-								"Fx_Glow_01.png": "scene/100002/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Glow_01.png",
-								"Fx_Glow_03.png": "scene/100002/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Glow_03.png",
-								"Fx_Ray_01.png": "scene/100002/Scene/EffectGroup/Fx_TowerExplode_01/Texture/Fx_Ray_01.png"
-							}
-						}
-					}
-				},
-				"NavGrid.nav": "scene/100002/NavGrid.nav",
-				"Scene.e3dPack": "scene/100002/Scene.e3dPack",
-				"Scene.e3dPackc": "scene/100002/Scene.e3dPackc"
-			},
-			"demovfx": {
-				"MapConfig.json": "scene/demovfx/MapConfig.json",
-				"timeConfig.json": "scene/demovfx/timeConfig.json",
-				"Texture": {
-					"Spark.png": "scene/demovfx/Texture/Spark.png",
-					"black.png": "scene/demovfx/Texture/black.png"
-				},
-				"EffectGroup": {
-					"lightning_9": {
-						"EffectsGroup.json": "scene/demovfx/EffectGroup/lightning_9/EffectsGroup.json",
-						"Particle": {
-							"lightning2_5.json": "scene/demovfx/EffectGroup/lightning_9/Particle/lightning2_5.json",
-							"lightning_9_4.json": "scene/demovfx/EffectGroup/lightning_9/Particle/lightning_9_4.json"
-						},
-						"Texture": {
-							"Fx_Lightning_01.png": "scene/demovfx/EffectGroup/lightning_9/Texture/Fx_Lightning_01.png",
-							"Fx_Lightning_02.png": "scene/demovfx/EffectGroup/lightning_9/Texture/Fx_Lightning_02.png"
-						}
-					},
-					"ray_10": {
-						"EffectsGroup.json": "scene/demovfx/EffectGroup/ray_10/EffectsGroup.json",
-						"Particle": {
-							"falloff2_50.json": "scene/demovfx/EffectGroup/ray_10/Particle/falloff2_50.json",
-							"flash1_61.json": "scene/demovfx/EffectGroup/ray_10/Particle/flash1_61.json",
-							"flash5_20.json": "scene/demovfx/EffectGroup/ray_10/Particle/flash5_20.json",
-							"glow1_19.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow1_19.json",
-							"glow1b_17.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow1b_17.json",
-							"glow3_25.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_25.json",
-							"glow3_30.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_30.json",
-							"glow3_33.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_33.json",
-							"glow3_38.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_38.json",
-							"glow3_41.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_41.json",
-							"glow3_46.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_46.json",
-							"glow3_52.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_52.json",
-							"glow3_53.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_53.json",
-							"glow3_54.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow3_54.json",
-							"glow4_59.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow4_59.json",
-							"glow4_60.json": "scene/demovfx/EffectGroup/ray_10/Particle/glow4_60.json",
-							"object1_29.json": "scene/demovfx/EffectGroup/ray_10/Particle/object1_29.json",
-							"object1_34.json": "scene/demovfx/EffectGroup/ray_10/Particle/object1_34.json",
-							"object1_37.json": "scene/demovfx/EffectGroup/ray_10/Particle/object1_37.json",
-							"object1_42.json": "scene/demovfx/EffectGroup/ray_10/Particle/object1_42.json",
-							"object1_45.json": "scene/demovfx/EffectGroup/ray_10/Particle/object1_45.json",
-							"particle1_56.json": "scene/demovfx/EffectGroup/ray_10/Particle/particle1_56.json",
-							"particle2_22.json": "scene/demovfx/EffectGroup/ray_10/Particle/particle2_22.json",
-							"ray2_31.json": "scene/demovfx/EffectGroup/ray_10/Particle/ray2_31.json",
-							"ray2_35.json": "scene/demovfx/EffectGroup/ray_10/Particle/ray2_35.json",
-							"ray2_39.json": "scene/demovfx/EffectGroup/ray_10/Particle/ray2_39.json",
-							"ray2_43.json": "scene/demovfx/EffectGroup/ray_10/Particle/ray2_43.json",
-							"ray2_47.json": "scene/demovfx/EffectGroup/ray_10/Particle/ray2_47.json",
-							"ray3_27.json": "scene/demovfx/EffectGroup/ray_10/Particle/ray3_27.json",
-							"ray_10_14.json": "scene/demovfx/EffectGroup/ray_10/Particle/ray_10_14.json",
-							"strike2_24.json": "scene/demovfx/EffectGroup/ray_10/Particle/strike2_24.json",
-							"trail2_57.json": "scene/demovfx/EffectGroup/ray_10/Particle/trail2_57.json",
-							"trail2_58.json": "scene/demovfx/EffectGroup/ray_10/Particle/trail2_58.json",
-							"trail8_55.json": "scene/demovfx/EffectGroup/ray_10/Particle/trail8_55.json",
-							"Model": {
-								"particleMesh_Plane_01_16.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_16.esm",
-								"particleMesh_Plane_01_18.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_18.esm",
-								"particleMesh_Plane_01_21.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_21.esm",
-								"particleMesh_Plane_01_23.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_23.esm",
-								"particleMesh_Plane_01_26.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_26.esm",
-								"particleMesh_Plane_01_28.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_28.esm",
-								"particleMesh_Plane_01_32.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_32.esm",
-								"particleMesh_Plane_01_36.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_36.esm",
-								"particleMesh_Plane_01_40.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_40.esm",
-								"particleMesh_Plane_01_44.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_44.esm",
-								"particleMesh_Plane_01_49.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Plane_01_49.esm",
-								"particleMesh_Ring_11_15.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Ring_11_15.esm",
-								"particleMesh_Ring_11_48.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Ring_11_48.esm",
-								"particleMesh_Ring_11_51.esm": "scene/demovfx/EffectGroup/ray_10/Particle/Model/particleMesh_Ring_11_51.esm"
-							}
-						},
-						"Texture": {
-							"Fx_Falloff_02.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Falloff_02.png",
-							"Fx_Flash_01.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Flash_01.png",
-							"Fx_Flash_05.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Flash_05.png",
-							"Fx_Glow_01.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Glow_01.png",
-							"Fx_Glow_03.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Glow_03.png",
-							"Fx_Glow_04.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Glow_04.png",
-							"Fx_Object_01.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Object_01.png",
-							"Fx_Particle_01.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Particle_01.png",
-							"Fx_Particle_02.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Particle_02.png",
-							"Fx_Ray_02.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Ray_02.png",
-							"Fx_Ray_03.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Ray_03.png",
-							"Fx_Strike_02.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Strike_02.png",
-							"Fx_Trail_08.png": "scene/demovfx/EffectGroup/ray_10/Texture/Fx_Trail_08.png"
-						}
-					},
-					"ray_8": {
-						"EffectsGroup.json": "scene/demovfx/EffectGroup/ray_8/EffectsGroup.json",
-						"Particle": {
-							"dash4_10.json": "scene/demovfx/EffectGroup/ray_8/Particle/dash4_10.json",
-							"flash4_8.json": "scene/demovfx/EffectGroup/ray_8/Particle/flash4_8.json",
-							"glow3_9.json": "scene/demovfx/EffectGroup/ray_8/Particle/glow3_9.json",
-							"ray3_11.json": "scene/demovfx/EffectGroup/ray_8/Particle/ray3_11.json",
-							"ray_8_6.json": "scene/demovfx/EffectGroup/ray_8/Particle/ray_8_6.json",
-							"strike2_13.json": "scene/demovfx/EffectGroup/ray_8/Particle/strike2_13.json",
-							"Model": {
-								"particleMesh_Plane_01_12.esm": "scene/demovfx/EffectGroup/ray_8/Particle/Model/particleMesh_Plane_01_12.esm",
-								"particleMesh_Plane_01_7.esm": "scene/demovfx/EffectGroup/ray_8/Particle/Model/particleMesh_Plane_01_7.esm"
-							}
-						},
-						"Texture": {
-							"Fx_Dash_04.png": "scene/demovfx/EffectGroup/ray_8/Texture/Fx_Dash_04.png",
-							"Fx_Flash_04.png": "scene/demovfx/EffectGroup/ray_8/Texture/Fx_Flash_04.png",
-							"Fx_Glow_03.png": "scene/demovfx/EffectGroup/ray_8/Texture/Fx_Glow_03.png",
-							"Fx_Ray_03.png": "scene/demovfx/EffectGroup/ray_8/Texture/Fx_Ray_03.png",
-							"Fx_Strike_02.png": "scene/demovfx/EffectGroup/ray_8/Texture/Fx_Strike_02.png"
-						}
-					},
-					"trail_5": {
-						"EffectsGroup.json": "scene/demovfx/EffectGroup/trail_5/EffectsGroup.json",
-						"Particle": {
-							"falloff1_77.json": "scene/demovfx/EffectGroup/trail_5/Particle/falloff1_77.json",
-							"glow1_68.json": "scene/demovfx/EffectGroup/trail_5/Particle/glow1_68.json",
-							"glow3_70.json": "scene/demovfx/EffectGroup/trail_5/Particle/glow3_70.json",
-							"glow3_71.json": "scene/demovfx/EffectGroup/trail_5/Particle/glow3_71.json",
-							"glow3_72.json": "scene/demovfx/EffectGroup/trail_5/Particle/glow3_72.json",
-							"glow3_79.json": "scene/demovfx/EffectGroup/trail_5/Particle/glow3_79.json",
-							"glow3_80.json": "scene/demovfx/EffectGroup/trail_5/Particle/glow3_80.json",
-							"particle1_73.json": "scene/demovfx/EffectGroup/trail_5/Particle/particle1_73.json",
-							"ray2_74.json": "scene/demovfx/EffectGroup/trail_5/Particle/ray2_74.json",
-							"trail6_65.json": "scene/demovfx/EffectGroup/trail_5/Particle/trail6_65.json",
-							"trail7_66.json": "scene/demovfx/EffectGroup/trail_5/Particle/trail7_66.json",
-							"trail_5_64.json": "scene/demovfx/EffectGroup/trail_5/Particle/trail_5_64.json",
-							"Model": {
-								"particleMesh_Plane_01_76.esm": "scene/demovfx/EffectGroup/trail_5/Particle/Model/particleMesh_Plane_01_76.esm",
-								"particleMesh_Ring_01_75.esm": "scene/demovfx/EffectGroup/trail_5/Particle/Model/particleMesh_Ring_01_75.esm",
-								"particleMesh_Ring_01_78.esm": "scene/demovfx/EffectGroup/trail_5/Particle/Model/particleMesh_Ring_01_78.esm",
-								"particleMesh_Ring_05_67.esm": "scene/demovfx/EffectGroup/trail_5/Particle/Model/particleMesh_Ring_05_67.esm",
-								"particleMesh_Ring_07_69.esm": "scene/demovfx/EffectGroup/trail_5/Particle/Model/particleMesh_Ring_07_69.esm"
-							}
-						},
-						"Texture": {
-							"Fx_Falloff_01.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Falloff_01.png",
-							"Fx_Glow_01.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Glow_01.png",
-							"Fx_Glow_02.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Glow_02.png",
-							"Fx_Glow_03.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Glow_03.png",
-							"Fx_Glow_04.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Glow_04.png",
-							"Fx_Particle_01.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Particle_01.png",
-							"Fx_Ray_02.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Ray_02.png",
-							"Fx_Trail_05.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Trail_05.png",
-							"Fx_Trail_06.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Trail_06.png",
-							"Fx_Trail_07.png": "scene/demovfx/EffectGroup/trail_5/Texture/Fx_Trail_07.png"
-						}
-					},
-					"trail_6": {
-						"EffectsGroup.json": "scene/demovfx/EffectGroup/trail_6/EffectsGroup.json",
-						"Particle": {
-							"glow3_89.json": "scene/demovfx/EffectGroup/trail_6/Particle/glow3_89.json",
-							"glow3_91.json": "scene/demovfx/EffectGroup/trail_6/Particle/glow3_91.json",
-							"ray2_87.json": "scene/demovfx/EffectGroup/trail_6/Particle/ray2_87.json",
-							"smoke1_90.json": "scene/demovfx/EffectGroup/trail_6/Particle/smoke1_90.json",
-							"trail6_84.json": "scene/demovfx/EffectGroup/trail_6/Particle/trail6_84.json",
-							"trail7_85.json": "scene/demovfx/EffectGroup/trail_6/Particle/trail7_85.json",
-							"trail_6_83.json": "scene/demovfx/EffectGroup/trail_6/Particle/trail_6_83.json",
-							"Model": {
-								"particleMesh_Plane_01_88.esm": "scene/demovfx/EffectGroup/trail_6/Particle/Model/particleMesh_Plane_01_88.esm",
-								"particleMesh_Ring_05_86.esm": "scene/demovfx/EffectGroup/trail_6/Particle/Model/particleMesh_Ring_05_86.esm"
-							}
-						},
-						"Texture": {
-							"Fx_Glow_02.png": "scene/demovfx/EffectGroup/trail_6/Texture/Fx_Glow_02.png",
-							"Fx_Ray_02.png": "scene/demovfx/EffectGroup/trail_6/Texture/Fx_Ray_02.png",
-							"Fx_Smoke_01.png": "scene/demovfx/EffectGroup/trail_6/Texture/Fx_Smoke_01.png",
-							"Fx_Trail_05.png": "scene/demovfx/EffectGroup/trail_6/Texture/Fx_Trail_05.png",
-							"Fx_Trail_06.png": "scene/demovfx/EffectGroup/trail_6/Texture/Fx_Trail_06.png",
-							"Fx_Trail_07.png": "scene/demovfx/EffectGroup/trail_6/Texture/Fx_Trail_07.png"
-						}
-					},
-					"trail_7": {
-						"EffectsGroup.json": "scene/demovfx/EffectGroup/trail_7/EffectsGroup.json",
-						"Particle": {
-							"falloff1_99.json": "scene/demovfx/EffectGroup/trail_7/Particle/falloff1_99.json",
-							"glow3_94.json": "scene/demovfx/EffectGroup/trail_7/Particle/glow3_94.json",
-							"glow3_95.json": "scene/demovfx/EffectGroup/trail_7/Particle/glow3_95.json",
-							"ray2_96.json": "scene/demovfx/EffectGroup/trail_7/Particle/ray2_96.json",
-							"smoke1_93.json": "scene/demovfx/EffectGroup/trail_7/Particle/smoke1_93.json",
-							"trail2_101.json": "scene/demovfx/EffectGroup/trail_7/Particle/trail2_101.json",
-							"trail_7_92.json": "scene/demovfx/EffectGroup/trail_7/Particle/trail_7_92.json",
-							"Model": {
-								"particleMesh_Plane_01_98.esm": "scene/demovfx/EffectGroup/trail_7/Particle/Model/particleMesh_Plane_01_98.esm",
-								"particleMesh_Ring_01_100.esm": "scene/demovfx/EffectGroup/trail_7/Particle/Model/particleMesh_Ring_01_100.esm",
-								"particleMesh_Ring_01_97.esm": "scene/demovfx/EffectGroup/trail_7/Particle/Model/particleMesh_Ring_01_97.esm"
-							}
-						},
-						"Texture": {
-							"Fx_Falloff_01.png": "scene/demovfx/EffectGroup/trail_7/Texture/Fx_Falloff_01.png",
-							"Fx_Glow_01.png": "scene/demovfx/EffectGroup/trail_7/Texture/Fx_Glow_01.png",
-							"Fx_Glow_03.png": "scene/demovfx/EffectGroup/trail_7/Texture/Fx_Glow_03.png",
-							"Fx_Ray_02.png": "scene/demovfx/EffectGroup/trail_7/Texture/Fx_Ray_02.png",
-							"Fx_Smoke_01.png": "scene/demovfx/EffectGroup/trail_7/Texture/Fx_Smoke_01.png",
-							"Fx_Trail_02.png": "scene/demovfx/EffectGroup/trail_7/Texture/Fx_Trail_02.png"
-						}
-					}
-				},
-				"uv2.eum": "scene/demovfx/uv2.eum",
-				"Model": {
-					"1_Sphere_2.esm": "scene/demovfx/Model/1_Sphere_2.esm",
-					"45_Plane_1.esm": "scene/demovfx/Model/45_Plane_1.esm",
-					"73_lookAtObj.esm": "scene/demovfx/Model/73_lookAtObj.esm"
-				},
-				"ProAnim": {
-					"trail_6_ArrowVFX.epa": "scene/demovfx/ProAnim/trail_6_ArrowVFX.epa"
-				}
-			}
-		},
-		"anim": {
-			"0_HM.e3dPack": "anim/0_HM.e3dPack",
-			"0_HM.e3dPackc": "anim/0_HM.e3dPackc",
-			"0_Mage_attack1.e3dPack": "anim/0_Mage_attack1.e3dPack",
-			"js.e3dPack": "anim/js.e3dPack",
-			"js.e3dPackc": "anim/js.e3dPackc"
+	"groups": [
+		{
+			"keys": "button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,border_png,header_png,roundthumb_png,track_sb_png,handle_png,off_png,on_png,thumb_png,track_png,tracklight_png,bg_jpg,ui_json,gameUI_json,ShadowPlane_png",
+			"name": "preload"
 		}
-	}
+	],
+	"resources": [
+		{
+			"url": "component/Button/button_down.png",
+			"type": "image",
+			"name": "button_down_png"
+		},
+		{
+			"url": "component/Button/button_up.png",
+			"type": "image",
+			"name": "button_up_png"
+		},
+		{
+			"url": "component/CheckBox/checkbox_select_disabled.png",
+			"type": "image",
+			"name": "checkbox_select_disabled_png"
+		},
+		{
+			"url": "component/CheckBox/checkbox_select_down.png",
+			"type": "image",
+			"name": "checkbox_select_down_png"
+		},
+		{
+			"url": "component/CheckBox/checkbox_select_up.png",
+			"type": "image",
+			"name": "checkbox_select_up_png"
+		},
+		{
+			"url": "component/CheckBox/checkbox_unselect.png",
+			"type": "image",
+			"name": "checkbox_unselect_png"
+		},
+		{
+			"url": "component/ItemRenderer/selected.png",
+			"type": "image",
+			"name": "selected_png"
+		},
+		{
+			"url": "component/ProgressBar/thumb_pb.png",
+			"type": "image",
+			"name": "thumb_pb_png"
+		},
+		{
+			"url": "component/ProgressBar/track_pb.png",
+			"type": "image",
+			"name": "track_pb_png"
+		},
+		{
+			"url": "component/RadioButton/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "component/RadioButton/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "component/RadioButton/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "component/RadioButton/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "component/Panel/border.png",
+			"type": "image",
+			"name": "border_png"
+		},
+		{
+			"url": "component/Panel/header.png",
+			"type": "image",
+			"name": "header_png"
+		},
+		{
+			"url": "component/ScrollBar/roundthumb.png",
+			"type": "image",
+			"name": "roundthumb_png"
+		},
+		{
+			"url": "component/ScrollBar/track_sb.png",
+			"type": "image",
+			"name": "track_sb_png"
+		},
+		{
+			"url": "component/ToggleSwitch/handle.png",
+			"type": "image",
+			"name": "handle_png"
+		},
+		{
+			"url": "component/ToggleSwitch/off.png",
+			"type": "image",
+			"name": "off_png"
+		},
+		{
+			"url": "component/ToggleSwitch/on.png",
+			"type": "image",
+			"name": "on_png"
+		},
+		{
+			"url": "component/Slider/thumb.png",
+			"type": "image",
+			"name": "thumb_png"
+		},
+		{
+			"url": "component/Slider/track.png",
+			"type": "image",
+			"name": "track_png"
+		},
+		{
+			"url": "component/Slider/tracklight.png",
+			"type": "image",
+			"name": "tracklight_png"
+		},
+		{
+			"url": "ui/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "ui/ui.json",
+			"type": "sheet",
+			"name": "ui_json",
+			"subkeys": "bk,logo,menu,pic1,pic2,pic3,pic4,pic5,pic6,star,suo,title"
+		},
+		{
+			"url": "ui/gameUI.json",
+			"type": "sheet",
+			"name": "gameUI_json",
+			"subkeys": "0.png,1.png,2.png,3.png,4.png,5.png,6.png,7.png,8.png,9.png,Backgrounds/Back_08.png,Bitmap 1.png,Bitmap 2.png,Bitmap 3.png,Bitmap 4.png,Bitmap 5.png,Bitmap 6.png,Bitmap 7.png,Buttons/c_up.png,Buttons/o_up.png,Buttons/t_up.png,Buttons/x_up.png,GameName.png,Joystick/Joystick_08.png,SkillBox.png,TownSystem_Btn_Player_nml.png,TownSystem_Btn_Skill_nml.png,about.png,back.png,bb.png,bg_01.png,bg_title.png,blood_0.png,blood_1.png,blood_2.png,blood_3.png,blood_4.png,blood_5.png,blood_6.png,blood_7.png,blood_8.png,blood_9.png,btn_autofight1.png,btn_autofight2.png,character_bg.png,continue.png,endingPanel.png,expbar.png,fh.png,grid.png,hits.png,hp_bar.png,hp_bar_background.png,hpbar_bg.png,hpbar_jun.png,hpbar_pet.png,leaveBtnDown.png,leaveBtnUp.png,levelname.png,lock.png,lockTip.png,maohao.png,newGame.png,powerByEgert3D.png,scene_100000.png,scene_100001.png,scene_100002.png,scene_100003.png,scene_100004.png,scene_100005.png,skilla.png,skillb.png,skillc.png,skilld.png,sq.png,star_no.png,start_has.png,title.png,title_1.png"
+		},
+		{
+			"url": "ui/ShadowPlane.png",
+			"type": "image",
+			"name": "ShadowPlane_png"
+		}
+	]
 }
