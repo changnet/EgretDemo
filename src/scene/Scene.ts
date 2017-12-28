@@ -66,8 +66,8 @@ class Scene extends egret3d.Scene3D {
 
         // 异步加载资源
         // 这些资源url都没有加resource前缀，因为在RES.processor.map调用加载函数的时候，会加上前缀
-        this.loadingPage = new LoadingPage(resUrl.length);
-        uiManager.showPage(this.loadingPage);
+        // this.loadingPage = new LoadingPage(resUrl.length);
+        // uiManager.showPage(this.loadingPage);
 
         Promise.all(resUrl.map(item => RES.getResAsync(item,this.onOnceComplete,this))).then(
             () => setTimeout( () => callBack.call(callBackObj),100 )
@@ -75,7 +75,7 @@ class Scene extends egret3d.Scene3D {
     }
 
     private onOnceComplete(val: any,key: string) {
-        this.loadingPage.update();
+        //this.loadingPage.update();
     }
 
     private addFog(obj: egret3d.Object3D,how: egret3d.LineFogMethod) {

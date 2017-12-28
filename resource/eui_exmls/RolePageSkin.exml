@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RolePageSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_jpg" x="0" y="0" width="100%" height="100%"/>
+	<e:Button id="createBtn" label="创角" x="246" y="622"/>
+	<e:TextInput id="nameEdit" width="147" height="31" x="264" y="550" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Label text="角色名：" x="116" y="550"/>
+</e:Skin>

@@ -95,7 +95,7 @@ class LoginPage extends eui.Component {
         var pkt = 
         {
             sid:1, // server id
-            time:new Date().getUTCSeconds(),
+            time: Math.floor(new Date().getTime()/1000),
             plat: 999, // test platform
             account: this.accEdit.text,
         }
@@ -105,9 +105,12 @@ class LoginPage extends eui.Component {
     }
 
     private onPlayerLogin(ecode,pkt): void {
-        console.log( "login",ecode,pkt)
-
-        // var roomPage = new RoomPage();
-        // uiManager.showPage(roomPage);
+        if (!pkt.pid || 0 == pkt.pid) {
+            var rolePage = new RolePage()
+            uiManager.showPage(rolePage)
+        }
+        else {
+            // 直接进入loading界面
+        }
     }
 }

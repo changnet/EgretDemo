@@ -61,14 +61,13 @@ class SrvSocket {
 
         var pkt = protobufManager.decode(cmd,buffer.bytes);
 
-        console.log("收到数据：" + bytes.length,cmd,ecode,pkt["pid"],pkt["name"]);
         var callback = this.cmdCall[cmd]
         if (!callback) {
             console.warn(`command recv,no callback founnd:${cmd}`);
             return;
         }
 
-        callback.call(ecode,pkt);
+        callback(ecode,pkt);
     }
 
     private onSocketOpen() : void {

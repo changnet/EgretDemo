@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="LoginPageSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="16091ddc228"/>
-	<e:Image id="bgImage" x="0" y="0" source="bg_jpg" width="640" height="1136"/>
+	<e:Image id="bgImage" x="0" y="0" source="bg_jpg" width="100%" height="100%"/>
 
 
 
