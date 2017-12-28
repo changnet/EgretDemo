@@ -46,6 +46,7 @@ var game_file_list = [
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/components/SkillBar.js",
 	"bin-debug/util/MathEx.js",
+	"bin-debug/util/ResLoader.js",
 	//----auto game_file_list end----
 ];
 

@@ -1,6 +1,8 @@
 
 class Main extends egret.DisplayObjectContainer {
     private isThemeLoadEnd: boolean = false;
+    private isResourceLoadEnd: boolean = false;
+
     public constructor() {
         super();
 
@@ -8,9 +10,7 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     async loadPreConf() {
-        // 初始化Resource资源加载库，即加载default.res.json这个文件
-        // 这个文件必须包含alias字段，这个字段在egret wing中编辑资源时不会自动生成
-        await RES.loadConfig("resource/default.res.json","resource/"); // await 相当于协程
+        await resLoader.init(); // await 相当于协程
         
         //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
         //加载default.thm.json这个文件及文件中包含的exmls文件
@@ -18,11 +18,7 @@ class Main extends egret.DisplayObjectContainer {
         theme.addEventListener(eui.UIEvent.COMPLETE, this.onThemeLoadComplete, this);
 
         // 加载基本的配置资源
-        RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
-        RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
-        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
-        RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
-        RES.loadGroup("preload");
+        resLoader.loadGroup("preload",this,this.onResourceLoadComplete);
     }
 
     public onAddToStage(){
@@ -68,19 +64,20 @@ class Main extends egret.DisplayObjectContainer {
             }, this);
     }
 
-private isResourceLoadEnd: boolean = false;
     /**
      * preload资源组加载完成
      * preload resource group is loaded
      */
     private onResourceLoadComplete(event: RES.ResourceEvent): void {
-        RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
-        RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
-        RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
-        RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
         this.isResourceLoadEnd = true;
         this.createScene();
     }
+
+    private onThemeLoadComplete(): void {
+        this.isThemeLoadEnd = true;
+        this.createScene();
+    }
+
     private createScene() {
         if (!this.isThemeLoadEnd || !this.isResourceLoadEnd) {
             return;
@@ -89,42 +86,5 @@ private isResourceLoadEnd: boolean = false;
         // 加载完资源，显示login界面
         var loginPage = new LoginPage();
         uiManager.showPage(loginPage);
-
-        // 在玩家输入帐号时，加载其他配置
-        // sceneManager.initConf();
-        // protobufManager.loadConf();
-    }
-    /**
-     * 资源组加载出错
-     *  The resource group loading failed
-     */
-    private onItemLoadError(event: RES.ResourceEvent): void {
-        console.warn("Url:" + event.resItem.url + " has failed to load");
-    }
-    /**
-     * 资源组加载出错
-     * Resource group loading failed
-     */
-    private onResourceLoadError(event: RES.ResourceEvent): void {
-        //TODO
-        console.warn("Group:" + event.groupName + " has failed to load");
-        //忽略加载失败的项目
-        //ignore loading failed projects
-        this.onResourceLoadComplete(event);
-    }
-    /**
-     * preload资源组加载进度
-     * loading process of preload resource
-     */
-    private onResourceProgress(event: RES.ResourceEvent): void {
-    }
-
-    /**
-     * 主题文件加载完成,开始预加载
-     * Loading of theme configuration file is complete, start to pre-load the 
-     */
-    private onThemeLoadComplete(): void {
-        this.isThemeLoadEnd = true;
-        this.createScene();
     }
 }

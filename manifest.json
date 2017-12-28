@@ -11,12 +11,12 @@
 	],
 	"game": [
 		"bin-debug/entity/Entity.js",
-		"bin-debug/entity/Animal.js",
 		"bin-debug/entityview/EntityView.js",
-		"bin-debug/entity/Player.js",
 		"bin-debug/behaviortree/node.js",
-		"bin-debug/entity/EntityManager.js",
 		"bin-debug/entityview/AnimalView.js",
+		"bin-debug/entity/Animal.js",
+		"bin-debug/entity/Player.js",
+		"bin-debug/entity/EntityManager.js",
 		"bin-debug/behaviortree/parallel.js",
 		"bin-debug/behaviortree/priority.js",
 		"bin-debug/behaviortree/random.js",
@@ -45,6 +45,7 @@
 		"bin-debug/ui/UIManager.js",
 		"bin-debug/ui/components/ProcessBar.js",
 		"bin-debug/ui/components/SkillBar.js",
-		"bin-debug/util/MathEx.js"
+		"bin-debug/util/MathEx.js",
+		"bin-debug/util/ResLoader.js"
 	]
 }

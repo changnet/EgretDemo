@@ -3,6 +3,10 @@
 		{
 			"keys": "button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,border_png,header_png,roundthumb_png,track_sb_png,handle_png,off_png,on_png,thumb_png,track_png,tracklight_png,bg_jpg,ui_json,gameUI_json,ShadowPlane_png",
 			"name": "preload"
+		},
+		{
+			"keys": "map_monster_json,equip_weapon_json,map_wave_json,map_scene_json,player_hero_json,skill_base_json",
+			"name": "initload"
 		}
 	],
 	"resources": [
@@ -142,6 +146,36 @@
 			"url": "ui/ShadowPlane.png",
 			"type": "image",
 			"name": "ShadowPlane_png"
+		},
+		{
+			"url": "config/map_monster.json",
+			"type": "json",
+			"name": "map_monster_json"
+		},
+		{
+			"url": "config/equip_weapon.json",
+			"type": "json",
+			"name": "equip_weapon_json"
+		},
+		{
+			"url": "config/map_wave.json",
+			"type": "json",
+			"name": "map_wave_json"
+		},
+		{
+			"url": "config/map_scene.json",
+			"type": "json",
+			"name": "map_scene_json"
+		},
+		{
+			"url": "config/player_hero.json",
+			"type": "json",
+			"name": "player_hero_json"
+		},
+		{
+			"url": "config/skill_base.json",
+			"type": "json",
+			"name": "skill_base_json"
 		}
 	]
 }

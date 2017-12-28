@@ -97,7 +97,7 @@ class RoomPage extends egret.DisplayObjectContainer {
         var index: number = 0;
         var disX = 40;
         var disY = 280;
-        var conf = confManager.getConf("config/map_scene.json")
+        var conf = []//confManager.getConf("config/map_scene.json")
 
         for (let sceneConf of conf) {
             let miniMap = new MiniMap(sceneConf,index > 4 ? 4 : index);

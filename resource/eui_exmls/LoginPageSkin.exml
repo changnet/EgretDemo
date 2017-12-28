@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="LoginPageSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="16091ddc228"/>
-	<e:Image id="bgImage" width="640" height="1136" x="0" y="0" source="bg_jpg"/>
+	<e:Image id="bgImage" x="0" y="0" source="bg_jpg" width="640" height="1136"/>
 
 
 
 
 	<e:Group width="555" height="214" x="42.5" y="354" anchorOffsetX="0" anchorOffsetY="0">
 		<e:TextInput id="hostEdit" width="200" height="30" x="150" y="38" text="127.0.0.1"/>
-		<e:TextInput id="portEdit" width="80" height="30" x="365" y="38" text="10002"/>
+		<e:TextInput id="portEdit" width="80" height="30" x="364" y="38" text="10002" inputType="text"/>
 		<e:Label id="srvLabel" text="服务器：" x="11" y="38"/>
 		<e:TextInput id="accEdit" width="310" height="30" x="150" y="92" anchorOffsetX="0" enabled="true" text="changnet"/>
 		<e:Label id="accLabel" text="帐   号：" x="11" y="92" anchorOffsetX="0" width="120"/>
@@ -23,4 +23,5 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
+	<e:Label id="progressLabel" text="loading..." x="260" y="936"/>
 </e:Skin>
