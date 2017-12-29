@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="LoadingPageSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="ui_json.logo" x="59" y="77"/>
 	<e:ProgressBar id="loadProgress" width="500" height="20" x="65" y="828"/>
 </e:Skin>

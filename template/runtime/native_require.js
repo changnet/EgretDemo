@@ -15,6 +15,7 @@ var game_file_list = [
 	"bin-debug/behaviortree/node.js",
 	"bin-debug/entityview/AnimalView.js",
 	"bin-debug/entity/Animal.js",
+	"bin-debug/entity/Player.js",
 	"bin-debug/entity/EntityManager.js",
 	"bin-debug/util/ResLoader.js",
 	"bin-debug/entityview/EntityViewManager.js",
@@ -28,8 +29,7 @@ var game_file_list = [
 	"bin-debug/behavior/move.js",
 	"bin-debug/behaviortree/condition.js",
 	"bin-debug/AssetAdapter.js",
-	"bin-debug/behaviortree/parallel.js",
-	"bin-debug/entity/Player.js",
+	"bin-debug/GameMain.js",
 	"bin-debug/entityview/MonsterView.js",
 	"bin-debug/entityview/PlayerView.js",
 	"bin-debug/network/commandDef.js",
@@ -47,7 +47,7 @@ var game_file_list = [
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/components/SkillBar.js",
 	"bin-debug/util/MathEx.js",
-	"bin-debug/GameMain.js",
+	"bin-debug/behaviortree/parallel.js",
 	//----auto game_file_list end----
 ];
 

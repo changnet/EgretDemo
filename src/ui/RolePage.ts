@@ -16,7 +16,28 @@ class RolePage extends eui.Component {
         this.createBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onCreateBtnClick,this)
     }
 
-    private onCreateBtnClick(e: egret.TouchEvent): void {
-
+    public onEnterPage(): void {
+        srvSocket.registerCommand(SPLAYER_CREATE,this.onPlayerCreate,this);
     }
+
+    public onLeavePage(): void {
+        srvSocket.unregisterCommand(SPLAYER_CREATE);
+        this.createBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP,this.onCreateBtnClick,this)
+    }
+
+    private onCreateBtnClick(e: egret.TouchEvent): void {
+        this.createBtn.enabled = false;
+        srvSocket.send(CPLAYER_CREATE,{ name: this.nameEdit.text });
+    }
+
+    private onPlayerCreate(ecode: number,pkt: any): void {
+        if (0 != ecode) {
+            console.log(`create role error:${ecode}`);
+            return;
+        }
+
+        var loadingPage = new LoadingPage();
+        uiManager.showPage(loadingPage);
+    }
+
 }

@@ -105,12 +105,21 @@ class LoginPage extends eui.Component {
     }
 
     private onPlayerLogin(ecode,pkt): void {
+        if (0 != ecode) {
+            // 比如服务器正在维护
+            console.log(`login fail:${ecode}`);
+            return;
+        }
+
+        // 该帐号是否已有角色，暂不考虑一号多角色
         if (!pkt.pid || 0 == pkt.pid) {
-            var rolePage = new RolePage()
-            uiManager.showPage(rolePage)
+            var rolePage = new RolePage();
+            uiManager.showPage(rolePage);
         }
         else {
             // 直接进入loading界面
+            var loadingPage = new LoadingPage();
+            uiManager.showPage(loadingPage);
         }
     }
 }

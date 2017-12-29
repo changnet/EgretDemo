@@ -53,9 +53,12 @@ class SrvSocket {
 
     private onRead( e:egret.Event ) {
         var bytes = new egret.ByteArray();
+        // 服务器一般是小端，由客户端转换
+        bytes.endian = egret.Endian.LITTLE_ENDIAN;
+
         this.webSocket.readBytes(bytes);
-        var cmd = bytes.readShort();
-        var ecode = bytes.readShort();
+        var cmd = bytes.readUnsignedShort();
+        var ecode = bytes.readUnsignedShort();
         var buffer = new egret.ByteArray();
         bytes.readBytes(buffer,0,0);
 
@@ -99,7 +102,10 @@ class SrvSocket {
         var buffer = protobufManager.encode( cmd,pkt )
 
         var bytes = new egret.ByteArray()
-        bytes.writeShort(cmd);
+        // 服务器一般是小端，由客户端转换
+        bytes.endian = egret.Endian.LITTLE_ENDIAN;
+
+        bytes.writeUnsignedShort(cmd);
         // 不能直接写入uintAttry ？？？只有构造函数和private函数_writeUint8Array
         bytes.writeBytes(new egret.ByteArray(buffer));
         this.webSocket.writeBytes( bytes )

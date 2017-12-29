@@ -7,6 +7,10 @@
 		{
 			"keys": "map_monster_json,equip_weapon_json,map_wave_json,map_scene_json,player_hero_json,skill_base_json",
 			"name": "initload"
+		},
+		{
+			"keys": "js_e3dPack",
+			"name": "enterload"
 		}
 	],
 	"resources": [
@@ -176,6 +180,11 @@
 			"url": "config/skill_base.json",
 			"type": "json",
 			"name": "skill_base_json"
+		},
+		{
+			"url": "anim/js.e3dPack",
+			"type": "bin",
+			"name": "js_e3dPack"
 		}
 	]
 }
