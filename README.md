@@ -1,5 +1,9 @@
 # EgretDemo
-My game demo for learning egret. Base on egret demo(http://developer.egret.com/cn/article/index/id/1074).
+
+A egret 2D/3D game demo for learning H5 game development.
+Base on egret demo(http://developer.egret.com/cn/article/index/id/1074).
+
+To run this demo,you need to build a game server first.The server is here:https://github.com/changnet/MServer.
 
 # Note
 
@@ -11,19 +15,13 @@ My game demo for learning egret. Base on egret demo(http://developer.egret.com/c
 * bin/resourcemanager是一个资源加载库（https://github.com/egret-labs/resourcemanager）。但不知道为什么没放到module里去
 * 通用鼠标事件PickEvent3D.PICK_DOWN来实现移动
 * proto.ts文件由工具生成. https://github.com/changnet/SPEditor
+* Not consider resources release yet
 
-寻路算法:  
-https://my.oschina.net/u/1859679/blog/1486636  
-复杂地形寻路：  
-(Recast & Detour)https://github.com/recastnavigation/recastnavigation  
-B星算法：  
-http://www.mamicode.com/info-detail-841620.html  
+# TODO
 
+* MVC design
 
-游戏地图的划分及其优劣性，这里包括(https://www.zhihu.com/question/20298134)：  
-Grid (方格)  
-Navigation Mesh(导航网格)  
+# other H5 game engine
 
-另一个h5引擎：  
 https://phaser.io
 
