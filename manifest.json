@@ -32,7 +32,7 @@
 		"bin-debug/GameMain.js",
 		"bin-debug/entityview/MonsterView.js",
 		"bin-debug/entityview/PlayerView.js",
-		"bin-debug/network/commandDef.js",
+		"bin-debug/network/proto.js",
 		"bin-debug/network/ProtobufManager.js",
 		"bin-debug/network/SrvSocket.js",
 		"bin-debug/scene/NavGrid.js",

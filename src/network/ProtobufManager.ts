@@ -8,7 +8,8 @@ class ProtoBufManager {
     public loadConf(loadCall?: Function): void {
         this.loadCall = loadCall;
         for (let module of MODULES ) {
-            protobuf.load(module.url,(err: Error,root: protobuf.Root) =>{
+            let url = `resource/proto/${module.package}.proto`
+            protobuf.load(url,(err: Error,root: protobuf.Root) =>{
                 this.loadCnt ++;
                 this.onOneLoaded(err,root,module);
             });

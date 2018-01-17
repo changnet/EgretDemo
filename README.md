@@ -10,6 +10,7 @@ My game demo for learning egret. Base on egret demo(http://developer.egret.com/c
 * egret的文件加载由index.html里加载所有js，包括module，并且由egret build命令自动生成。这样整个项目中不需要import或require。http://edn.egret.com/cn/article/index/id/643
 * bin/resourcemanager是一个资源加载库（https://github.com/egret-labs/resourcemanager）。但不知道为什么没放到module里去
 * 通用鼠标事件PickEvent3D.PICK_DOWN来实现移动
+* proto.ts文件由工具生成. https://github.com/changnet/SPEditor
 
 寻路算法:  
 https://my.oschina.net/u/1859679/blog/1486636  
