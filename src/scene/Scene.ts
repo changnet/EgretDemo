@@ -15,8 +15,8 @@ class Scene extends egret3d.Scene3D {
         this.sceneConf = sceneConf;
 
         if (!Scene.monMap || !Scene.monWaveMap) {
-            Scene.monMap = confManager.getHashConf("config/map_monster.json","id");
-            Scene.monWaveMap = confManager.getHashConf("config/map_wave.json","id");
+            Scene.monMap = confManager.getHashConf("map_monster_json","id");
+            Scene.monWaveMap = confManager.getHashConf("map_wave_json","id");
         }
     }
 
@@ -94,7 +94,10 @@ class Scene extends egret3d.Scene3D {
     public createScene():void {
         // 添加场景资源
         var assetId: number = this.sceneConf["asset_id"];
-        var sceneRes = RES.getRes(`scene/${assetId}/Scene.e3dPack`)
+        var sceneRes = RES.getRes(`Scene${assetId}_e3dPack`)
+        console.log( sceneRes )
+        var scene3d = new egret3d.Scene3D();
+        var loader:egret3d.URLLoader = new egret3d.URLLoader;
         this.addChild(sceneRes);
 
         // 添加特效
@@ -108,7 +111,7 @@ class Scene extends egret3d.Scene3D {
         this.addFog(this,lfm);
 
         // 创建地形导航网格
-        var navRes = RES.getRes(`scene/${assetId}/NavGrid.nav`);
+        var navRes = RES.getRes(`NavGrid${assetId}_nav`);
         this.naviGrid = egret3d.NavGrid.createNavGridFromBuffer(navRes);
         var terrain: egret3d.Mesh =
             <egret3d.Mesh>sceneRes.findObject3D("TerrainCollider");

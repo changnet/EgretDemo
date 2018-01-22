@@ -47,7 +47,7 @@ class LoadingPage extends eui.Component{
         srvSocket.registerCommand(SPLAYER_ENTER,this.onPlayerEnter,this);
 
         srvSocket.send(CPLAYER_ENTER,{});
-        resLoader.loadGroup("enterload",this,this.onResComplete,this.onResProgress);
+        resLoader.loadMultiGroup("playerenterload",["enterload","scene100001"],this,this.onResComplete,this.onResProgress);
     }
 
     public onLeavePage(): void {
@@ -85,5 +85,8 @@ class LoadingPage extends eui.Component{
         // 进入游戏主场景
         var mainPage = new MainPage();
         uiManager.showPage( mainPage );
+
+        sceneManager.initConf();
+        sceneManager.enterScene( 100000 );
     }
 }

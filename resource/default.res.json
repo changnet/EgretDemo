@@ -11,6 +11,10 @@
 		{
 			"keys": "js_e3dPack",
 			"name": "enterload"
+		},
+		{
+			"keys": "Scene100001_e3dPack,NavGrid100001_nav",
+			"name": "scene100001"
 		}
 	],
 	"resources": [
@@ -185,6 +189,16 @@
 			"url": "anim/js.e3dPack",
 			"type": "bin",
 			"name": "js_e3dPack"
+		},
+		{
+			"url": "scene/100001/Scene.e3dPack",
+			"type": "bin",
+			"name": "Scene100001_e3dPack"
+		},
+		{
+			"url": "scene/100001/NavGrid.nav",
+			"type": "bin",
+			"name": "NavGrid100001_nav"
 		}
 	]
 }

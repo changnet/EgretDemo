@@ -10,6 +10,7 @@ class ResLoader {
     private groupMap: {[key:string]: ResGroup} = {}
 
     constructor() {
+        RES.registerAnalyzer("e3dpack", ResGroup);
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
@@ -32,6 +33,12 @@ class ResLoader {
 
         this.groupMap[name] = resGroup;
         RES.loadGroup(name);
+    }
+
+    // wrap一层RES.loadGroup，简化回调，允许不同分组不同回调函数,并且不用取消事件监听
+    public loadMultiGroup(name: string,groupList: string[],thisObj: any,complete: Function,progress?: Function): void {
+        RES.createGroup(name,groupList);
+        this.loadGroup(name,thisObj,complete,progress);
     }
     /**
      * 资源组加载出错

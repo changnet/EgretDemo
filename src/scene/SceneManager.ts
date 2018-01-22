@@ -57,7 +57,7 @@ class SceneManager {
     }
 
     public initConf() {
-        this.sceneConf = confManager.getHashConf("config/map_scene.json","id");
+        this.sceneConf = confManager.getHashConf("map_scene_json","id");
     }
 
     public set view(vw: egret3d.View3D) {
@@ -91,8 +91,9 @@ class SceneManager {
 
         // 进入场景之前，先要加载场景资源并创建场景
         var scene = new Scene(sceneID,oneSceneConf);
-        scene.loadScene(this.onLoadSceneDone,this);
+        // scene.loadScene(this.onLoadSceneDone,this);
         this.currentScene = scene;
+        this.onLoadSceneDone();
     }
 
     // 加载场景完成
