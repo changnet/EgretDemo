@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainPageSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="sceneNameImg" source="gameUI_json.scene_100000.png" x="2" y="1"/>
+	<e:ProgressBar id="expBar" width="508" height="17" x="86.5" y="1118" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image source="gameUI_json.SkillBox.png" x="86.5" y="990"/>
+	<e:Image source="gameUI_json.SkillBox.png" x="214.5" y="989"/>
+	<e:Image source="gameUI_json.SkillBox.png" x="342.5" y="990"/>
+	<e:Image source="gameUI_json.SkillBox.png" x="470.5" y="989"/>
+	<e:Button id="mapBtn" label="" x="522" y="16">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="gameUI_json.fh.png" source.down="gameUI_json.fh.png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

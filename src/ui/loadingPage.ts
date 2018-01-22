@@ -62,12 +62,14 @@ class LoadingPage extends eui.Component{
 
     private onResComplete(): void {
         this.cltReady = true;
+        console.log("client player enter world");
+
         this.enterWorld();
     }
 
     private onPlayerEnter(ecode: number,pkt: any): void {
         this.srvLoad = this.srvTotal;
-        console.log("player enter world");
+        console.log("server player enter world");
 
         this.updateProgress();
 
@@ -77,10 +79,11 @@ class LoadingPage extends eui.Component{
 
     private enterWorld(): void {
         // 不要用资源加载数量对比，因为服务器的协议数量不准
-        if ( this.srvReady || !this.cltReady ) {
+        if ( !this.srvReady || !this.cltReady ) {
             return;
         }
-        // TODO: 进入游戏主场景
-        console.log("enter world");
+        // 进入游戏主场景
+        var mainPage = new MainPage();
+        uiManager.showPage( mainPage );
     }
 }
