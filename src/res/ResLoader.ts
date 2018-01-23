@@ -10,7 +10,7 @@ class ResLoader {
     private groupMap: {[key:string]: ResGroup} = {}
 
     constructor() {
-        RES.registerAnalyzer("e3dpack", ResGroup);
+        // RES.registerAnalyzer("e3dpack", RES.UnitAnalyzer);
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
@@ -21,6 +21,7 @@ class ResLoader {
         // 初始化Resource资源加载库，即加载default.res.json这个文件
         // 这个文件必须包含alias字段，这个字段在egret wing中编辑资源时不会自动生成
         RES.loadConfig("resource/default.res.json","resource/");
+        RES.registerAnalyzer("e3dpack", RES.UnitAnalyzer);
     }
 
     // wrap一层RES.loadGroup，简化回调，允许不同分组不同回调函数,并且不用取消事件监听

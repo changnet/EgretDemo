@@ -20,64 +20,6 @@ class Scene extends egret3d.Scene3D {
         }
     }
 
-    public loadScene(callBack: Function,callBackObj: any) {
-        var assetId: number = this.sceneConf["asset_id"];
-        var resUrl: string[] = [];
-
-        // 场景资源
-        // e3dpack是unity3d的格式，需要使用unity3d的工具来编辑和导出
-        // http://developer.egret.com/cn/github/egret-docs/Engine3D/unity/5/index.html
-        resUrl.push(`scene/${assetId}/Scene.e3dPack`);
-        resUrl.push(`scene/${assetId}/NavGrid.nav`);
-
-        // 怪物资源
-        var monIdMap: {[key: number]: boolean} = {} //防止重复加载
-        var resKeyMap: {[key: string]: boolean} = {}
-        var monWave: number = this.sceneConf["monster_wave"];
-        while (monWave) {
-            let waveConf = Scene.monWaveMap[monWave];
-            if (!waveConf) {
-                throw Error(`monster wave config not found in scene(${this.sceneID}) wave(${monWave})`);
-            }
-
-            for (let monId of waveConf["monster_id"]) {
-                if (monIdMap[monId]) {
-                    continue;
-                }
-
-                monIdMap[monId] = true;
-                let monConf = Scene.monMap[monId];
-                if (!monConf) {
-                    throw Error(`monster config not found in scene(${this.sceneID}) wave(${monWave}) mon(${monId})`);
-                }
-                // 怪物动作
-                let monAsset = monConf["asset_id"];
-                if (resKeyMap[monAsset]) {
-                    continue;
-                }
-
-                resKeyMap[monAsset] = true;
-                resUrl.push(`anim/${monAsset}.e3dPack`);
-                // 怪物技能
-            }
-
-            monWave = waveConf["next_wave"];
-        }
-
-        // 异步加载资源
-        // 这些资源url都没有加resource前缀，因为在RES.processor.map调用加载函数的时候，会加上前缀
-        // this.loadingPage = new LoadingPage(resUrl.length);
-        // uiManager.showPage(this.loadingPage);
-
-        Promise.all(resUrl.map(item => RES.getResAsync(item,this.onOnceComplete,this))).then(
-            () => setTimeout( () => callBack.call(callBackObj),100 )
-        );
-    }
-
-    private onOnceComplete(val: any,key: string) {
-        //this.loadingPage.update();
-    }
-
     private addFog(obj: egret3d.Object3D,how: egret3d.LineFogMethod) {
         for (var child of obj.childs) {
             // 如果类型是Mesh，则指定雾化方式，渲染的时候会自动生效
@@ -94,10 +36,8 @@ class Scene extends egret3d.Scene3D {
     public createScene():void {
         // 添加场景资源
         var assetId: number = this.sceneConf["asset_id"];
-        var sceneRes = RES.getRes(`Scene${assetId}_e3dPack`)
-        console.log( sceneRes )
-        var scene3d = new egret3d.Scene3D();
-        var loader:egret3d.URLLoader = new egret3d.URLLoader;
+        var sceneRes = RES.getRes(`Scene${assetId}_e3dPack`);
+        var s3d = sceneRes as egret3d.Scene3D;
         this.addChild(sceneRes);
 
         // 添加特效

@@ -7,7 +7,7 @@ class PlayerView extends AnimalView {
 
         if (!PlayerView.heroConf) {
             PlayerView.heroConf = 
-                confManager.getHashConf("config/player_hero.json","id");
+                confManager.getHashConf("player_hero_json","id");
         }
 
         var conf = PlayerView.heroConf[modelId]
@@ -17,6 +17,6 @@ class PlayerView extends AnimalView {
 
         // 创建一个egret3d用于显示的对象
         var assertId = conf["asset_id"];
-        this.createRole(`anim/${assertId}.e3dPack`);
+        this.createRole(`${assertId}_e3dPack`);
     }
 }

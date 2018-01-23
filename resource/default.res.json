@@ -187,12 +187,12 @@
 		},
 		{
 			"url": "anim/js.e3dPack",
-			"type": "bin",
+			"type": "e3dpack",
 			"name": "js_e3dPack"
 		},
 		{
 			"url": "scene/100001/Scene.e3dPack",
-			"type": "bin",
+			"type": "e3dpack",
 			"name": "Scene100001_e3dPack"
 		},
 		{

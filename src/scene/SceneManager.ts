@@ -101,10 +101,6 @@ class SceneManager {
         this.currentScene.createScene();
         this.view.scene = this.currentScene;
 
-        // 3d场景已创建完成。现在在3d场景上再加一层2d显示技能、之类的
-        var battlePage = new BattlePage();
-        uiManager.showPage(battlePage);
-
         // 主玩家进入场景
         this.currentScene.addMainPlayer(mainPlayer);
     }

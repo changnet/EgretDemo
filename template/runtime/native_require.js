@@ -18,8 +18,8 @@ var game_file_list = [
 	"bin-debug/entity/Player.js",
 	"bin-debug/entity/EntityManager.js",
 	"bin-debug/util/ResLoader.js",
-	"bin-debug/entityview/EntityViewManager.js",
-	"bin-debug/behaviortree/priority.js",
+	"bin-debug/res/UnitAnalyzer.js",
+	"bin-debug/entityview/MonsterView.js",
 	"bin-debug/behaviortree/random.js",
 	"bin-debug/behaviortree/repeat.js",
 	"bin-debug/behaviortree/sequence.js",
@@ -30,11 +30,12 @@ var game_file_list = [
 	"bin-debug/behaviortree/condition.js",
 	"bin-debug/AssetAdapter.js",
 	"bin-debug/behaviortree/parallel.js",
-	"bin-debug/entityview/MonsterView.js",
+	"bin-debug/GameMain.js",
 	"bin-debug/entityview/PlayerView.js",
 	"bin-debug/network/proto.js",
 	"bin-debug/network/ProtobufManager.js",
 	"bin-debug/network/SrvSocket.js",
+	"bin-debug/behaviortree/priority.js",
 	"bin-debug/scene/NavGrid.js",
 	"bin-debug/scene/Scene.js",
 	"bin-debug/scene/SceneManager.js",
@@ -48,7 +49,7 @@ var game_file_list = [
 	"bin-debug/ui/components/ProcessBar.js",
 	"bin-debug/ui/components/SkillBar.js",
 	"bin-debug/util/MathEx.js",
-	"bin-debug/GameMain.js",
+	"bin-debug/entityview/EntityViewManager.js",
 	//----auto game_file_list end----
 ];
 
