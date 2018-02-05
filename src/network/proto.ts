@@ -20,9 +20,31 @@ const PLAYER = {
 
     ]
 };
+const BAG = {
+    package: "bag",
+    module: (0x02 << 8),
+
+    clt_cmd: [
+
+    ],
+    srv_cmd: [
+
+    ]
+};
+const MISC = {
+    package: "misc",
+    module: (0x03 << 8),
+
+    clt_cmd: [
+
+    ],
+    srv_cmd: [
+
+    ]
+};
 
 
-const MODULES = [ PLAYER ];
+const MODULES = [ PLAYER,BAG,MISC ];
 
 const CPLAYER_LOGIN = PLAYER.module + 0x01;
 const SPLAYER_LOGIN = PLAYER.module + 0x01;

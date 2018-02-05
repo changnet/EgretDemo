@@ -49,6 +49,7 @@
 		"bin-debug/ui/UIManager.js",
 		"bin-debug/ui/components/ProcessBar.js",
 		"bin-debug/ui/components/SkillBar.js",
+		"bin-debug/ui/components/SkillButtonPage.js",
 		"bin-debug/util/MathEx.js"
 	]
 }
